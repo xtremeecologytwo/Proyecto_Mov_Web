@@ -1,0 +1,66 @@
+<!-- src/pages/dashboard.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Finaizen</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <main class="dashboard">
+  <section class="dashboard-top">
+    <div class="summary card">
+      <h3>Resumen Mensual</h3>
+      <p>Ahorro = Ingreso - gastos</p>
+      <h4>Ahorro: <span>$1800</span></h4>
+      <canvas id="chart-line"></canvas>
+    </div>
+
+    <div class="history card">
+      <h3>Historial</h3>
+      <p>Café <span class="negative">-$8.50</span></p>
+      <p>Super <span class="negative">-$45.20</span></p>
+      <p>Salario <span class="positive">+$1,500</span></p>
+
+      <a href="#">Ver historial</a>
+      <div class="buttons">
+        <button class="btn ingreso">Ingreso</button>
+        <button class="btn gasto">Gasto</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="dashboard-bottom">
+    <div class="distribution card">
+      <h4>Distribución</h4>
+      <canvas id="chart-pie"></canvas>
+    </div>
+
+    <div class="cards">
+      <div class="card alert-card">
+        <h4>Comida</h4>
+        <p>$120.50 / $150</p>
+        <span class="alert">⚠️ ¡Cuidado! Te queda poco presupuesto.</span>
+      </div>
+
+      <div class="card normal-card">
+        <h4>Transporte</h4>
+        <p>$25.00 / $60</p>
+      </div>
+    </div>
+  </section>
+</main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>

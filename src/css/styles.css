@@ -1,0 +1,85 @@
+body {
+    margin : 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f6fa;
+    color: #222;
+}
+
+.container{
+    display: flex;
+}
+
+.sidebar{
+    background-color: #0a2a43;
+    color: white;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+.sidebar-nav ul{
+list-style: none;
+padding: 0;
+}
+
+
+.sidebar-nav li{
+padding: 0.7em 1em;
+}
+
+.sidebar-nav a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.sidebar-nav a:hover {
+  background-color: #1c4c73;
+  border-radius: 6px;
+}
+
+.sidebar-footer {
+  text-align: center;
+  padding: 1em;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.user img {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn.ingreso {
+  background-color: #1fc600;
+  color: white;
+}
+
+.btn.gasto {
+  background-color: #c60000;
+  color: white;
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
