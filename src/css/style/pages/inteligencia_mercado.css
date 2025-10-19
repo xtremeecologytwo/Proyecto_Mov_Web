@@ -1,0 +1,107 @@
+ /* --- Estilos para el Sidebar Fijo --- */
+        #sidebar-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh; /* Ocupa toda la altura de la pantalla */
+            z-index: 1000; /* Un valor alto para asegurar que esté por encima de otros elementos */
+        }
+
+        /* --- Estilos específicos para la página de Inteligencia de Mercado --- */
+        .main-content {
+            flex-grow: 1;
+            padding: 30px;
+            margin-left: 290px; /* Ajusta este valor al ancho de tu sidebar */
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* --- Contenedor de Filtros --- */
+        .filters-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #dee2e6;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .filter-group h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #333;
+            border-right: 2px solid #eee;
+            padding-right: 20px;
+        }
+
+        .filter-item { display: flex; flex-direction: column; gap: 5px; }
+        .filter-item label { font-size: 0.9em; color: #666; }
+        .filter-item select {
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            background-color: #f8f9fa;
+            min-width: 150px;
+        }
+        
+        .comparison-controls {
+            padding-top: 15px;
+            margin-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        #comparison-filters-container {
+            display: none;
+            background-color: #f7f9fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        /* --- Contenedores de Gráficos --- */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 1.5em;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1em;
+        }
+
+        #dataTable {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1em;
+        }
+        #dataTable th, #dataTable td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .insights-card { border-left: 6px solid #4e79a7; }
+
+        /* Media Query para responsividad de la cuadrícula */
+        @media (max-width: 1200px) {
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+        }

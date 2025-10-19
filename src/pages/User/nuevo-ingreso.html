@@ -1,0 +1,66 @@
+<!-- src/pages/User/nuevo_ingreso.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Ingreso | Finaizen</title>
+    <!-- Archivos CSS Global y Específico -->
+    <link rel="stylesheet" href="../../css/style/base/main.css">
+    <link rel="stylesheet" href="../../css/style/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/style/pages/nuevo_ingreso.css">
+</head>
+<body class="layout-centered">
+    <div class="container">
+        <!-- El Sidebar se carga aquí -->
+        <div id="sidebar-container" data-sidebar="user"></div>
+
+        <!-- Contenido principal de la página -->
+        <main class="main-content">
+            <form class="income-form">
+                <h1>Nuevo Ingreso</h1>
+                <h2>Monto: $ 20</h2>
+
+                <div class="form-group description-group">
+                    <label for="descripcion">Descripción:</label>
+                    <input type="text" id="descripcion" placeholder="Ej: Salario mensual, bono, regalo, etc.">
+                </div>
+
+                <div class="form-row">
+                    <!-- Columna de Frecuencia -->
+                    <div class="form-group">
+                        <label>Frecuencia:</label>
+                        <ul class="frequency-list">
+                            <li data-value="diario">Diario</li>
+                            <li data-value="semanal" class="active">Semanal</li>
+                            <li data-value="mensual">Mensual</li>
+                            <li data-value="anual">Anual</li>
+                            <li data-value="ocasional">Ocasional</li>
+                        </ul>
+                    </div>
+
+                    <!-- Columna de Días -->
+                    <div class="form-group">
+                        <label>Seleccione los días:</label>
+                        <div class="days-selector">
+                            <button type="button" class="day-btn active" data-day="lunes">Lunes</button>
+                            <button type="button" class="day-btn" data-day="martes">Martes</button>
+                            <button type="button" class="day-btn" data-day="miercoles">Miércoles</button>
+                            <button type="button" class="day-btn active" data-day="jueves">Jueves</button>
+                            <button type="button" class="day-btn" data-day="viernes">Viernes</button>
+                            <button type="button" class="day-btn" data-day="sabado">Sábado</button>
+                            <button type="button" class="day-btn" data-day="domingo">Domingo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="save-btn">Guardar nuevo ingreso</button>
+            </form>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/nuevo_ingreso.js"></script>
+</body>
+</html>

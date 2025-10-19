@@ -1,0 +1,192 @@
+/* src/css/plan_de_ahorro.css - REDISEÑO COMPLETO */
+
+/* --- Fondo oscuro y centrado para la página --- */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #1a1c20; /* Fondo oscuro principal */
+}
+
+.savings-planner {
+    background: none; /* Quitamos el fondo gris anterior */
+    padding: 1em; /* Un poco menos de padding */
+    width: 100%;
+    max-width: 900px;
+    box-shadow: none;
+}
+
+/* --- Títulos --- */
+.savings-planner h1, .savings-planner .subtitle {
+    text-align: center;
+    color: #f0f0f0; /* Texto claro */
+}
+.savings-planner .subtitle {
+    color: #888;
+    margin-top: -1em;
+    margin-bottom: 2em;
+}
+
+/* --- Paneles con Efecto Neón --- */
+.panel {
+    background-color: #252a34; /* Un color oscuro ligeramente más claro */
+    padding: 1.5em 2em;
+    border: 1px solid #333a45;
+    border-radius: 16px; /* Bordes redondeados modernos */
+    
+    /* ¡LA MAGIA DEL NEÓN! */
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.2), inset 0 0 10px rgba(0, 191, 255, 0.1);
+    
+    transition: all 0.3s ease-in-out;
+}
+
+.panel:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 25px rgba(0, 191, 255, 0.3), inset 0 0 15px rgba(0, 191, 255, 0.15);
+}
+
+.planner-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2em;
+    margin-bottom: 2em;
+}
+
+.panel h2 {
+    margin-top: 0;
+    color: #f0f0f0;
+}
+
+/* --- Panel de Filtros (Estilo Oscuro) --- */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    color: #ccc;
+}
+.checkbox-group input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #555;
+    border-radius: 4px;
+    margin-right: 0.8em;
+    cursor: pointer;
+    position: relative;
+}
+.checkbox-group input[type="checkbox"]:checked {
+    background-color: #00bfff;
+    border-color: #00bfff;
+}
+.checkbox-group input[type="checkbox"]:checked::before {
+    content: '✔';
+    font-size: 14px;
+    color: #1a1c20;
+    position: absolute;
+    top: -2px;
+    left: 1px;
+}
+.button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5em;
+    margin-top: 1.5em;
+}
+.btn-filter {
+    background: transparent;
+    border: 2px solid #555;
+    color: #ccc;
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+.btn-filter:hover {
+    border-color: #00bfff;
+    color: #00bfff;
+}
+.btn-filter.active {
+    background: #00bfff;
+    color: #1a1c20;
+    border-color: #00bfff;
+}
+
+/* --- Panel de Meta (Estilo Oscuro) --- */
+.goal-panel .input-group {
+    display: flex;
+    gap: 1em;
+    margin: 1.5em 0;
+}
+.goal-panel input {
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    background-color: #1a1c20;
+    border: 2px solid #555;
+    color: #f0f0f0;
+    border-radius: 12px;
+    font-size: 1.1em;
+    transition: all 0.2s ease;
+}
+.goal-panel input:focus {
+    outline: none;
+    border-color: #00bfff;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+}
+#calculate-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    width: 100%;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+#calculate-btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+}
+
+/* --- Panel de Resultados (Estilo Oscuro) --- */
+.result-panel {
+    text-align: center;
+    color: #ccc;
+}
+.result-panel.hidden { display: none; }
+
+.alert-box {
+    background-color: rgba(255, 82, 82, 0.1);
+    border: 2px solid #ff5252;
+    color: #ff8a80;
+    padding: 1em;
+    border-radius: 15px;
+    margin: 1em auto;
+    max-width: 350px;
+}
+.alert-box h3 { margin: 0; font-size: 1.3em; }
+.alert-box p { margin: 0.3em 0 0 0; color: #ff8a80; }
+.suggestion-text { font-weight: bold; margin-top: 1.5em; }
+.options-group {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
+}
+.btn-option {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.btn-option:hover {
+    background-color: #0056b3;
+}

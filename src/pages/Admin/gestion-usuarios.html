@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios | Admin Panel</title>
+    <link rel="stylesheet" href="../../css/style/base/main.css">
+    <link rel="stylesheet" href="../../css/style/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/style/pages/gestion_usuarios.css">
+</head>
+<body>
+
+<div id="action-modal" class="modal-overlay">
+    <!-- El contenido del modal se generará dinámicamente con JS -->
+</div>
+
+<div class="container">
+    <div id="sidebar-container" data-sidebar="admin"></div>
+    <main class="main-content">
+        
+        <div class="kpi-container">
+            <div class="kpi-card"><h4>Total de Usuarios</h4><p id="kpi-total"></p></div>
+            <div class="kpi-card"><h4>Usuarios Activos</h4><p id="kpi-active"></p></div>
+            <div class="kpi-card"><h4>Usuarios Suspendidos</h4><p id="kpi-suspended"></p></div>
+        </div>
+
+        <section class="card">
+            <div class="table-header">
+                <div class="filters-bar">
+                    <input type="text" id="search-input" placeholder="Buscar por nombre o email...">
+                    <select id="role-filter"><option value="todos">Todos los roles</option></select>
+                    <select id="status-filter">
+                        <option value="todos">Todos los estados</option>
+                        <option value="Activo">Activo</option>
+                        <option value="Suspendido">Suspendido</option>
+                    </select>
+                </div>
+                <button id="btn-invite-user">Invitar Nuevo Usuario</button>
+            </div>
+
+            <table class="user-table">
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Email</th>
+                        <th>Fecha Registro</th>
+                        <th>Estado</th>
+                        <th>Rol</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="user-tbody"></tbody>
+            </table>
+        </section>
+    </main>
+</div>
+
+<script src="../../js/gestion-usuarios.js"></script>
+<script src="../../js/main.js"></script>
+</body>
+</html>

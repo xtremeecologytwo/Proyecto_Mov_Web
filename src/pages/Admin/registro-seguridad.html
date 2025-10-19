@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Seguridad | Admin Panel</title>
+    <link rel="stylesheet" href="../../css/style/base/main.css">
+    <link rel="stylesheet" href="../../css/style/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/style/pages/registro_seguridad.css">
+</head>
+<body>
+
+<div id="confirmation-modal" class="modal-overlay">
+    <div class="modal-content">
+        <h3 id="modal-title">Confirmar Acción</h3>
+        <p id="modal-message"></p>
+        <div class="modal-actions">
+            <button id="modal-cancel" class="btn-cancel">Cancelar</button>
+            <button id="modal-confirm" class="btn-confirm">Confirmar</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div id="sidebar-container" data-sidebar="admin"></div>
+    <main class="main-content">
+        
+        <div class="kpi-container">
+            <div class="kpi-card security">
+                <h4>Intentos Fallidos</h4>
+                <p>128</p>
+                <span>Últimas 24h</span>
+            </div>
+            <div class="kpi-card security">
+                <h4>Cuentas Bloqueadas</h4>
+                <p>4</p>
+                <span>Total</span>
+            </div>
+            <div class="kpi-card security">
+                <h4>Eventos Críticos</h4>
+                <p>8</p>
+                <span>Últimas 24h</span>
+            </div>
+        </div>
+
+        <section class="card">
+            <div class="filters-bar">
+                <select id="event-filter">
+                    <option value="todos">Todos los eventos</option>
+                    <option value="fallido">Inicio de Sesión Fallido</option>
+                    <option value="exitoso">Inicio de Sesión Exitoso</option>
+                    <option value="modificacion">Modificación de Cuenta</option>
+                </select>
+                <input type="text" id="search-input" placeholder="Buscar por usuario o IP...">
+            </div>
+
+            <table class="security-log-table">
+                <thead>
+                    <tr>
+                        <th>Fecha y Hora</th>
+                        <th>Evento</th>
+                        <th>Dirección IP</th>
+                        <th>Usuario Afectado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="security-log-tbody"></tbody>
+            </table>
+        </section>
+    </main>
+</div>
+
+<script src="../../js/registro-seguridad.js"></script>
+<script src="../../js/main.js"></script>
+</body>
+</html>
+

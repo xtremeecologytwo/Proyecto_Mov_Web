@@ -1,0 +1,160 @@
+/* src/css/nuevo_ingreso.css - REDISEÑO NEÓN VERDE */
+
+/* --- Fondo oscuro y centrado para la página --- */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #1a1c20; /* Fondo oscuro principal */
+}
+
+/* --- Formulario Principal con Efecto Neón --- */
+.income-form {
+    background-color: #252a34; /* Fondo oscuro para el formulario */
+    padding: 2.5em;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    border: 1px solid #333a45;
+    
+    /* ¡LA MAGIA DEL NEÓN VERDE! */
+    box-shadow: 0 0 20px rgba(40, 167, 69, 0.25), inset 0 0 15px rgba(40, 167, 69, 0.15);
+}
+
+.income-form h1 {
+    margin-top: 0;
+    color: #f0f0f0;
+}
+
+.income-form h2 {
+    color: #888;
+    margin-bottom: 2em;
+    font-weight: normal;
+}
+
+/* --- Grupos y Filas del Formulario --- */
+.form-group {
+    text-align: left;
+    margin-bottom: 1.5em;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.8em;
+    font-weight: bold;
+    color: #ccc;
+}
+
+.form-row {
+    display: flex;
+    gap: 2em;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* --- Campo de Descripción (Estilo Oscuro) --- */
+#descripcion {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #1a1c20;
+    border: 2px solid #555;
+    color: #f0f0f0;
+    border-radius: 10px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+#descripcion:focus {
+    outline: none;
+    border-color: #28a745; /* Verde neón al enfocar */
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+}
+
+/* --- Lista de Frecuencia (Estilo Oscuro) --- */
+.frequency-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.frequency-list li {
+    padding: 10px 15px;
+    background: transparent;
+    border: 2px solid #555;
+    color: #ccc;
+    border-radius: 8px;
+    margin-bottom: 0.5em;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.frequency-list li:hover {
+    border-color: #28a745;
+    color: #28a745;
+}
+
+.frequency-list li.active {
+    background-color: #28a745;
+    color: #1a1c20; /* Texto oscuro para contraste */
+    border-color: #28a745;
+    font-weight: bold;
+}
+
+/* --- Selector de Días (Estilo Oscuro) --- */
+.days-selector {
+    background-color: #1a1c20;
+    border: 2px solid #555;
+    padding: 1.5em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7em;
+    justify-content: center;
+    border-radius: 16px; /* Borde redondeado simple y moderno */
+}
+
+.day-btn {
+    background-color: transparent;
+    border: 2px solid #555;
+    color: #ccc;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.day-btn:hover {
+    border-color: #28a745;
+    color: #28a745;
+}
+
+.day-btn.active {
+    background-color: #28a745;
+    color: #1a1c20;
+    border-color: #28a745;
+    font-weight: bold;
+}
+
+/* --- Botón de Guardar (Estilo Oscuro) --- */
+.save-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1.5em;
+    transition: all 0.2s ease-in-out;
+}
+
+.save-btn:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(40, 167, 69, 0.4);
+}

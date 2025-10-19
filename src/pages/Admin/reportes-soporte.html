@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes de Soporte | Admin Panel</title>
+    <link rel="stylesheet" href="../../css/style/base/main.css">
+    <link rel="stylesheet" href="../../css/style/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/style/pages/reportes_soporte.css">
+</head>
+<body>
+
+<div id="assign-modal" class="modal-overlay">
+    <div class="modal-content">
+        <h3>Asignar Reporte de Soporte</h3>
+        <p><strong>Reporte ID:</strong> <span id="modal-report-id"></span></p>
+        <div class="form-group">
+            <label for="modal-assign-to">Asignar a:</label>
+            <select id="modal-assign-to">
+                <option>Ana (Soporte N1)</option>
+                <option>Carlos (Soporte N1)</option>
+                <option>Laura (Soporte Técnico N2)</option>
+                <option>Equipo de TI (Escalar)</option>
+            </select>
+        </div>
+        <div class="modal-actions">
+            <button id="modal-cancel" class="btn-cancel">Cancelar</button>
+            <button id="modal-save" class="btn-save">Asignar</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div id="sidebar-container" data-sidebar="admin"></div>
+    <main class="main-content">
+        
+        <div class="kpi-container">
+            <div class="kpi-card">
+                <h4>Tickets Nuevos</h4>
+                <p>2</p>
+                <span>En las últimas 24h</span>
+            </div>
+            <div class="kpi-card">
+                <h4>Tickets Resueltos</h4>
+                <p>18</p>
+                <span>En las últimas 24h</span>
+            </div>
+            <div class="kpi-card">
+                <h4>Tiempo de Respuesta Prom.</h4>
+                <p>2h 15m</p>
+                <span>En las últimas 24h</span>
+            </div>
+        </div>
+
+        <section class="card">
+            <div class="filters-bar">
+                <select id="status-filter">
+                    <option value="todos">Todos los estados</option>
+                    <option value="nuevo">Nuevo</option>
+                    <option value="pendiente">Pendiente</option>
+                    <option value="resuelto">Resuelto</option>
+                    <option value="escalado">Escalado</option>
+                </select>
+                <input type="text" id="search-input" placeholder="Buscar por usuario o asunto...">
+            </div>
+
+            <table class="support-table">
+                <thead>
+                    <tr>
+                        <th>ID Reporte</th>
+                        <th>Usuario</th>
+                        <th>Asunto</th>
+                        <th>Fecha</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="support-tbody">
+                    <!-- Filas generadas por JS -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
+
+<script src="../../js/reportes-soporte.js"></script>
+<script src="../../js/main.js"></script>
+</body>
+</html>
+

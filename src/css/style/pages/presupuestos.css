@@ -1,0 +1,138 @@
+/* src/css/presupuestos.css */
+
+/* --- Fondo oscuro y centrado para la página --- */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #1a1c20; /* Fondo oscuro principal */
+}
+
+/* --- Contenedor principal del gestor de presupuestos --- */
+.budget-manager {
+    background-color: #252a34; /* Fondo de la tarjeta principal */
+    width: 100%;
+    max-width: 800px;
+    height: 85vh; /* Ocupa el 85% de la altura de la ventana */
+    padding: 2em;
+    border-radius: 20px;
+    border: 1px solid #333a45;
+    /* Efecto Neón */
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.2), inset 0 0 15px rgba(0, 191, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Encabezado --- */
+.manager-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2em;
+    color: #f0f0f0;
+}
+.manager-header h1 {
+    margin: 0;
+}
+.btn-add {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.btn-add:hover {
+    background-color: #0056b3;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+}
+
+/* --- Lista de Presupuestos (con scroll) --- */
+.budget-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 15px; /* Espacio para la barra de scroll */
+}
+
+/* Barra de Scroll Personalizada Estilo Neón */
+.budget-list::-webkit-scrollbar { width: 8px; }
+.budget-list::-webkit-scrollbar-track { background: #1a1c20; border-radius: 4px; }
+.budget-list::-webkit-scrollbar-thumb { background: #00bfff; border-radius: 4px; }
+.budget-list::-webkit-scrollbar-thumb:hover { background: #009acd; }
+
+/* --- Tarjeta de Presupuesto Individual --- */
+.budget-card {
+    background-color: #333a45;
+    padding: 1em 1.5em;
+    border-radius: 15px;
+    margin-bottom: 1.5em;
+    border-left: 5px solid; /* Borde de color según el estado */
+}
+.budget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8em;
+    color: #f0f0f0;
+}
+.budget-header h2 {
+    margin: 0;
+    font-size: 1.3em;
+}
+.budget-header .amount {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.budget-actions a {
+    color: #00bfff;
+    text-decoration: none;
+    font-size: 0.9em;
+    margin-left: 1em;
+}
+.budget-actions a.delete {
+    color: #ff5252;
+}
+
+/* --- Barra de Progreso --- */
+.progress-bar {
+    background-color: #1a1c20;
+    height: 12px;
+    border-radius: 6px;
+    border: 1px solid #555;
+    overflow: hidden;
+}
+.progress {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* --- Alerta de texto --- */
+.alert-text {
+    font-size: 0.8em;
+    margin-top: 0.5em;
+    display: block;
+}
+
+/* --- Colores de Estado --- */
+/* Estado OK (verde) */
+.status-ok .progress { background-color: #28a745; }
+.status-ok { border-left-color: #28a745; }
+
+/* Estado Warning (naranja) */
+.status-warning .progress { background-color: #fd7e14; }
+.status-warning { border-left-color: #fd7e14; }
+.status-warning .alert-text { color: #fd7e14; }
+
+/* Estado Danger (rojo) */
+.status-danger .progress { background-color: #dc3545; }
+.status-danger { border-left-color: #dc3545; }
+.status-danger .alert-text { color: #dc3545; }
+
+/* Estado Neutral (azul) para Ocio */
+.status-neutral .progress { background-color: #007bff; }
+.status-neutral { border-left-color: #007bff; }

@@ -1,51 +1,41 @@
-document.addEventListener("DOMContentLoaded", () =>{
-    const sidebarContainer = document.getElementById("sidebar-container");
 
-    fetch("../components/sidebar.html")
-    .then(response => response.text())
-    .then(html =>{
-        sidebarContainer.innerHTML = html;
-    })
-    
-    .catch(err => console.error("Error el cargar el sidebar:",err))
-});
-
-// src/js/dashboard.js
 document.addEventListener("DOMContentLoaded", () => {
-  const ctxLine = document.getElementById("chart-line");
-  const ctxPie = document.getElementById("chart-pie");
+    const sidebarContainer = document.getElementById("sidebar-container");
+    // Usamos una clase genérica para todo el contenido principal
+    const mainContent = document.querySelector(".main-content");
 
-  // === Gráfico de línea ===
-  new Chart(ctxLine, {
-    type: "line",
-    data: {
-      labels: ["May", "Jun", "Jul", "Aug", "Sep", "Oct"],
-      datasets: [{
-        label: "Ahorro Mensual",
-        data: [400, 600, 1000, 1300, 1600, 1800],
-        borderColor: "#0044cc",
-        backgroundColor: "rgba(0, 68, 204, 0.15)",
-        borderWidth: 2,
-        fill: true,
-        tension: 0.3
-      }]
-    },
-    options: {
-      plugins: { legend: { display: false } },
-      scales: { y: { beginAtZero: true } }
+    if (!sidebarContainer || !mainContent) {
+        console.error("No se encontraron los contenedores #sidebar-container o .main-content en esta página.");
+        return;
     }
-  });
 
-  // === Gráfico de pastel ===
-  new Chart(ctxPie, {
-    type: "doughnut",
-    data: {
-      labels: ["Vivienda", "Comida", "Transporte", "Ocio"],
-      datasets: [{
-        data: [35, 30, 20, 15],
-        backgroundColor: ["#4e79a7", "#f28e2b", "#e15759", "#76b7b2"]
-      }]
-    },
-    options: { plugins: { legend: { position: "bottom" } } }
-  });
+    // Leemos qué sidebar cargar desde el HTML (ver Paso 3)
+    const sidebarType = sidebarContainer.dataset.sidebar; // 'admin' o 'user'
+
+    if (!sidebarType) {
+        console.error("El contenedor #sidebar-container no tiene el atributo 'data-sidebar'.");
+        return;
+    }
+
+    const sidebarFile = `../../components/sidebar_${sidebarType}.html`;
+
+    // --- Cargar el Sidebar y Activar el Toggle ---
+    fetch(sidebarFile)
+        .then(response => {
+            if (!response.ok) throw new Error(`No se pudo cargar ${sidebarFile}`);
+            return response.text();
+        })
+        .then(html => {
+            sidebarContainer.innerHTML = html;
+            
+            // Adjuntar el evento al botón DESPUÉS de que la sidebar se haya cargado
+            const menuToggleButton = document.getElementById("menu-toggle");
+            if (menuToggleButton) {
+                menuToggleButton.addEventListener("click", () => {
+                    sidebarContainer.classList.toggle("collapsed");
+                    mainContent.classList.toggle("sidebar-collapsed");
+                });
+            }
+        })
+        .catch(err => console.error("Error al cargar y configurar el sidebar:", err));
 });

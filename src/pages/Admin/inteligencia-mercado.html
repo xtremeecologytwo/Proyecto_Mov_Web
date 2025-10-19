@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inteligencia de Mercado | Admin Panel</title>
+    <!-- Estilos generales y del dashboard que ya tienes -->
+    <link rel="stylesheet" href="../../css/style/base/main.css">
+    <link rel="stylesheet" href="../../css/style/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/style/pages/inteligencia_mercado.css">
+</head>
+<body>
+
+<div class="container">
+    <div id="sidebar-container" data-sidebar="admin"></div>
+
+    <main class="main-content">
+        <section class="filters-container">
+            <!-- ... (sección de filtros sin cambios) ... -->
+             <div class="main-filters">
+                <div class="filter-group">
+                    <h3>Filtros Principales</h3>
+                    <div class="filter-item">
+                        <label for="age-range-1">Rango de edad</label>
+                        <select id="age-range-1">
+                            <option value="18-25">18-25 años</option>
+                            <option value="26-35">26-35 años</option>
+                            <option value="36-50">36-50 años</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label for="location-1">Ubicación</label>
+                        <select id="location-1">
+                            <option value="quito">Quito</option>
+                            <option value="guayaquil">Guayaquil</option>
+                        </select>
+                    </div>
+                </div>
+                 <button id="download-csv-btn">Descargar CSV</button>
+            </div>
+            <div class="comparison-controls">
+                <label>
+                    <input type="checkbox" id="compare-toggle"> Comparar con otro grupo
+                </label>
+            </div>
+            <div id="comparison-filters-container">
+                 <div class="filter-group">
+                    <h3>Filtros de Comparación</h3>
+                    <div class="filter-item">
+                        <label for="age-range-2">Rango de edad</label>
+                        <select id="age-range-2">
+                            <option value="18-25">18-25 años</option>
+                            <option value="26-35" selected>26-35 años</option>
+                            <option value="36-50">36-50 años</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label for="location-2">Ubicación</label>
+                        <select id="location-2">
+                            <option value="quito">Quito</option>
+                            <option value="guayaquil">Guayaquil</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="charts-grid">
+            <section class="card chart-container">
+                <div class="chart-header">
+                    <h3 id="chart-title">Top 5 Categorías de Gasto</h3>
+                    <button id="toggle-view">Ver Tabla</button>
+                </div>
+                <div id="chart-wrapper"><canvas id="topCategoriesChart"></canvas></div>
+                <div id="dataTable-container" style="display: none;">
+                    <table id="dataTable">
+                        <thead></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="card">
+                <h3>Fuentes de Ingreso</h3>
+                <canvas id="incomeSourceChart"></canvas>
+            </section>
+
+            <section class="card" style="grid-column: 1 / -1;">
+                <h3>Tendencia Ingreso vs. Egreso (Últimos 6 meses)</h3>
+                <canvas id="trendsChart"></canvas>
+            </section>
+        </div>
+        
+        <section class="card insights-card">
+            <h4>Análisis Automático</h4>
+            <p id="insight-text"></p>
+        </section>
+
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../../js/inteligencia-mercado.js"></script>
+<script src="../../js/main.js"></script>
+</body>
+</html>
+

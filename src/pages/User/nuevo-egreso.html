@@ -1,0 +1,73 @@
+<!-- src/pages/User/nuevo_egreso.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Egreso | Finaizen</title>
+    <!-- CSS Global y de la Página -->
+    <link rel="stylesheet" href="../../css/style/base/main.css">
+    <link rel="stylesheet" href="../../css/style/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/style/pages/nuevo_egreso.css">
+    <!-- CSS para el Calendario (¡Importante!) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
+</head>
+<body class="layout-centered">
+    <div class="container">
+        <!-- El Sidebar se carga aquí -->
+        <div id="sidebar-container" data-sidebar="user"></div>
+
+        <!-- Contenido principal de la página -->
+        <main class="main-content">
+            <form class="expense-form">
+                <h1>Nuevo Egreso</h1>
+                <h2>Monto: $ 15</h2>
+
+                <div class="form-group description-group">
+                    <label for="descripcion-egreso">Descripción:</label>
+                    <input type="text" id="descripcion-egreso" placeholder="Ej: Suscripción streaming, comida, etc.">
+                </div>
+
+                <div class="form-row">
+                    <!-- Columna de Frecuencia -->
+                    <div class="form-group">
+                        <label>Frecuencia:</label>
+                        <ul class="frequency-list">
+                            <li data-value="diario">Diario</li>
+                            <li data-value="semanal">Semanal</li>
+                            <li data-value="mensual" class="active">Mensual</li>
+                            <li data-value="anual">Anual</li>
+                            <li data-value="ocasional">Ocasional</li>
+                        </ul>
+                    </div>
+
+                    <!-- Columna de Clasificación -->
+                    <div class="form-group">
+                        <label>Clasificación:</label>
+                        <div class="classification-selector">
+                            <button type="button" class="classification-btn active" data-value="prioritario">Prioritario</button>
+                            <button type="button" class="classification-btn" data-value="secundario">Secundario</button>
+                        </div>
+                    </div>
+
+                    <!-- Columna de Fecha -->
+                    <div class="form-group">
+                        <label for="fecha-egreso">Seleccione una fecha:</label>
+                        <!-- Este input se transformará en el calendario -->
+                        <input type="text" id="fecha-egreso" placeholder="Seleccionar...">
+                    </div>
+                </div>
+
+                <button type="submit" class="save-btn">Guardar nuevo egreso</button>
+            </form>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <!-- Script para el Calendario (¡Importante!) -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="../../js/nuevo_egreso.js"></script>
+</body>
+</html>

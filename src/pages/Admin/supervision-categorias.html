@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervisión de IA | Admin Panel</title>
+    <link rel="stylesheet" href="../../css/style/base/main.css">
+    <link rel="stylesheet" href="../../css/style/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/style/pages/supervision_categorias.css">
+
+    <style>
+        
+    </style>
+</head>
+<body>
+
+<div id="correction-modal" class="modal-overlay">
+    <div class="modal-content">
+        <h3>Corregir Clasificación</h3>
+        <p><strong>Descripción Original:</strong> <span id="modal-original-desc"></span></p>
+        <div class="form-group">
+            <label for="modal-keyword">Palabra Clave</label>
+            <input type="text" id="modal-keyword">
+        </div>
+        <div class="form-group">
+            <label for="modal-category">Categoría General</label>
+            <select id="modal-category">
+                <option>Entretenimiento</option>
+                <option>Salud</option>
+                <option>Transporte</option>
+                <option>Supermercado</option>
+                <option>Suscripciones</option>
+                <option>Otros</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="modal-create-rule">
+            <label for="modal-create-rule">Crear regla permanente para esta palabra clave</label>
+        </div>
+        <div class="modal-actions">
+            <button id="modal-cancel" class="btn-cancel">Cancelar</button>
+            <button id="modal-save" class="btn-save">Guardar Corrección</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div id="sidebar-container" data-sidebar="admin"></div>
+    <main class="main-content">
+        
+        <div class="kpi-container">
+            <div class="kpi-card">
+                <h4>Precisión del modelo</h4>
+                <p>96.5%</p>
+                <span>Últimos 7 días</span>
+            </div>
+            <div class="kpi-card">
+                <h4>Correcciones manuales</h4>
+                <p>82</p>
+                <span>Últimos 7 días</span>
+            </div>
+            <div class="kpi-card">
+                <h4>Categorías problemáticas</h4>
+                <ul class="problem-list">
+                    <li>1. Suscripciones</li>
+                    <li>2. Transporte</li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="card">
+            <h4>Campo de Pruebas de la IA</h4>
+            <div class="ai-playground">
+                <div class="input-group">
+                    <label for="ai-test-input">Ingresa una descripción para probar:</label>
+                    <input type="text" id="ai-test-input" placeholder="Ej: 'Pago de la luz'">
+                </div>
+                <button id="ai-test-btn">Probar</button>
+            </div>
+            <div id="ai-prediction-result"></div>
+        </section>
+
+        <div class="charts-grid">
+            <section class="card">
+                <h4>Distribución de Confianza</h4>
+                <canvas id="confidenceChart"></canvas>
+            </section>
+            <section class="card">
+                <h4>Tendencia de Correcciones</h4>
+                <canvas id="correctionsTrendChart"></canvas>
+            </section>
+        </div>
+
+        <section class="card">
+            <div class="filters-bar">
+                <select id="confidence-filter">
+                    <option value="todos">Todos los niveles</option>
+                    <option value="baja">Confianza Baja</option>
+                    <option value="media">Confianza Media</option>
+                    <option value="alta">Confianza Alta</option>
+                </select>
+                <input type="text" id="search-input" placeholder="Buscar por descripción...">
+            </div>
+
+            <table class="supervision-table">
+                <thead>
+                    <tr>
+                        <th>Descripción del usuario</th>
+                        <th>Palabra clave IA</th>
+                        <th>Categoría general IA</th>
+                        <th>Confianza</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="supervision-tbody"></tbody>
+            </table>
+        </section>
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../../js/supervision-categorias.js"></script>
+<script src="../../js/main.js"></script>
+</body>
+</html>
+

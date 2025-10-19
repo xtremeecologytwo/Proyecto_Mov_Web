@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="../../css/style/pages/dashboard_admin.css">
+    <link rel="stylesheet" href="../../css/style/base/main.css">
+    <link rel="stylesheet" href="../../css/style/components/sidebar.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- El sidebar se cargará aquí dinámicamente -->
+    <div id="sidebar-container" data-sidebar="admin"></div>
+
+    <main class="dashboard-admin main-content">
+        <section class="summary-cards">
+            <div class="card summary-card">
+                <h3>Usuarios Activos</h3>
+                <p>1428</p>
+            </div>
+            <div class="card summary-card">
+                <h3>Cuentas creadas</h3>
+                <p>1428</p>
+            </div>
+            <div class="card summary-card">
+                <h3>Reportes</h3>
+                <p>12</p>
+            </div>
+        </section>
+
+        <section class="card chart-container">
+            <h3>Crecimiento de Usuarios</h3>
+            <div class="chart-wrapper">
+            <canvas id="userGrowthChart"></canvas>
+        </div>
+        </section>
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../../js/dashboradAdmin.js"></script>
+<script src="../../js/main.js"></script>
+</body>
+</html>
+
