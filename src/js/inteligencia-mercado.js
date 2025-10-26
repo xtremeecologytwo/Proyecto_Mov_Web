@@ -1,14 +1,3 @@
-document.addEventListener("DOMContentLoaded", () =>{
-    const sidebarContainer = document.getElementById("sidebar-container");
-fetch('../../components/sidebar_admin.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('sidebar-container').innerHTML = data;
-        })
-        .catch(error => console.error('Error al cargar el sidebar:', error));
-
-});
-
 // --- Mockup Extendido de Base de Datos ---
     const mockDatabase = {
         quito: {

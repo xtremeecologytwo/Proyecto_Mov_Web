@@ -2,15 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     // --- Cargar el Sidebar Dinámicamente ---
-    const sidebarContainer = document.getElementById("sidebar-container");
-    if (sidebarContainer) {
-        fetch("../../components/sidebar_user.html")
-            .then(response => response.text())
-            .then(html => {
-                sidebarContainer.innerHTML = html;
-            })
-            .catch(err => console.error("Error al cargar el sidebar:", err));
-    }
+
 
     // --- Inicializar los Gráficos ---
     const ctxLine = document.getElementById("chart-line");

@@ -1,9 +1,9 @@
-/* Archivo Completo: css/dashboard_user.css - REDISEÑO NEÓN */
+/* Archivo Completo: css/dashboard_user.css - REDISEÑO SOFISTICADO PASTEL */
 
-/* --- Contenido Principal (Fondo Oscuro) --- */
+/* --- Contenido Principal (Fondo Claro y Suave) --- */
 main.dashboard {
     padding: 30px;
-    background-color: #1a1c20; /* Fondo oscuro principal */
+    background-color: #f8f9fa; /* Un gris muy claro, casi blanco */
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -17,34 +17,43 @@ main.dashboard {
     align-items: stretch;
 }
 
-/* --- Estilo Base para Todas las Tarjetas (Neón) --- */
+/* --- Estilo Base para Todas las Tarjetas (Claro y Sofisticado) --- */
 .card {
-    background-color: #252a34; /* Fondo de tarjeta oscuro */
-    color: #f0f0f0; /* Texto claro */
+    background-color: #ffffff;
+    color: #343a40; /* Texto oscuro principal */
     border-radius: 16px;
-    padding: 20px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
-    border: 1px solid #333a45;
-    /* Efecto Neón Azul */
-    box-shadow: 0 0 15px rgba(0, 191, 255, 0.2), inset 0 0 10px rgba(0, 191, 255, 0.1);
+    border: 1px solid #e9ecef; /* Borde muy sutil */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07); /* Sombra suave y difuminada */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* --- Distribución de Anchos --- */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
+}
+
+/* --- Distribución de Anchos (sin cambios) --- */
 .history { flex: 1; }
 .cards { flex: 2; }
 .summary { flex: 3; }
 .distribution { flex: 1; }
 
 /* --- Tarjeta de Historial --- */
-.history h3 { margin-top: 0; }
+.history h3 { 
+    margin-top: 0;
+    color: #343a40;
+}
 .history p {
     display: flex;
     justify-content: space-between;
     margin: 1em 0;
+    color: #6c757d; /* Texto secundario gris */
 }
 .history a {
-    color: #00bfff; /* Azul neón */
+    color: #4DB6AC; /* Teal pastel */
     text-decoration: none;
     font-weight: bold;
     text-align: center;
@@ -52,8 +61,8 @@ main.dashboard {
     margin-top: auto;
     padding-top: 20px;
 }
-.positive { color: #28a745; font-weight: bold; }
-.negative { color: #dc3545; font-weight: bold; }
+.positive { color: #81C784; font-weight: bold; } /* Verde pastel */
+.negative { color: #E57373; font-weight: bold; } /* Rojo/Rosa pastel */
 
 /* --- Contenedor de Tarjetas de Presupuesto --- */
 .cards {
@@ -61,33 +70,32 @@ main.dashboard {
     display: flex; flex-direction: column; gap: 15px;
 }
 .alert-card, .normal-card {
-    /* Heredan el estilo .card, no necesitan mucho más */
+    /* Heredan el estilo .card */
 }
 .alert-card h4, .normal-card h4, .alert-card p, .normal-card p {
     margin: 0;
+    color: #343a40;
 }
 .alert {
-    color: #ffc107; /* Amarillo resalta bien */
+    color: #FFB74D; /* Naranja pastel */
 }
 
-/* --- Tarjeta del Gráfico de Línea --- */
-.summary h3, .summary p {
-    color: #ccc;
+/* --- Tarjetas de Gráficos --- */
+.summary h3, .distribution h4 {
+    margin-top: 0;
+    color: #343a40;
+}
+.summary p {
+    color: #6c757d;
     margin: 0;
 }
 .summary h4 {
     font-size: 1.5em;
     margin: 10px 0;
-    color: #f0f0f0;
+    color: #343a40;
 }
 
-/* --- Tarjeta del Gráfico de Dona --- */
-.distribution h4 {
-    margin-top: 0;
-    color: #f0f0f0;
-}
-
-/* --- Contenedores de Gráficos --- */
+/* --- Contenedores de Gráficos (sin cambios de layout) --- */
 .chart-wrapper {
     position: relative;
     flex-grow: 1;
@@ -102,13 +110,16 @@ main.dashboard {
 }
 
 /* --- Botones Ingreso/Egreso --- */
-.btn.ingreso {
-    background-color: #28a745;
+.btn.ingreso, .btn.gasto {
     border: none;
     color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px;
+    transition: opacity 0.2s ease;
 }
-.btn.gasto {
-    background-color: #dc3545;
-    border: none;
-    color: white;
+.btn.ingreso { background-color: #81C784; } /* Verde pastel */
+.btn.gasto { background-color: #E57373; } /* Rojo/Rosa pastel */
+.btn:hover {
+    opacity: 0.85;
 }

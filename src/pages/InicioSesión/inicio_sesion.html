@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finaizen - Donde cada gasto tiene un propósito</title>
+    <!-- Incluye Tailwind CSS para un diseño moderno y responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carga la fuente Inter -->
+    <link rel="stylesheet" href="../../css/style/pages/inicio_sesion.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+</head>
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <nav class="max-w-7xl mx-auto p-4 flex justify-between items-center">
+            <div class="text-2xl font-bold brand-text-color">Finaizen</div>
+            <div class="flex items-center space-x-4">
+                <a href="#login-register" class="text-gray-600 hover:text-gray-900 font-medium">Iniciar sesión</a>
+                <a href="#login-register" class="btn-brand">Registrarse</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sección Principal (Hero) -->
+    <section class="min-h-[70vh] flex items-center justify-center text-center py-20 bg-gray-50">
+        <div class="max-w-4xl px-4">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 leading-tight mb-6">
+                Organiza tu Dinero.
+                <span class="brand-text-color">Vive Mejor.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 font-medium mb-10">
+                "Donde cada gasto tiene un propósito y cada meta se hace realidad."
+            </p>
+            <div id="login-register" class="max-w-sm mx-auto bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200">
+                <h2 class="text-2xl font-semibold mb-6 text-gray-800">Comienza Ahora</h2>
+                <!-- El atributo onsubmit="return false;" evita que el formulario se envíe a una URL real -->
+                <form onsubmit="return false;">
+                    <input type="email" placeholder="Correo electrónico" required class="w-full p-3 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500">
+                    <input type="password" placeholder="Contraseña" required class="w-full p-3 mb-6 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500">
+                    <button type="submit" class="btn-brand w-full py-3">
+                        Iniciar Sesión / Registrarse
+                    </button>
+                </form>
+                <p class="text-sm mt-4 text-gray-500">Al registrarte, aceptas nuestros términos y condiciones.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Características de la App (Scroll Sections) -->
+
+    <!-- Característica 1: Dashboard -->
+    <section class="feature-section bg-white">
+        <div class="content-container">
+            <div class="lg:w-1/2">
+                <h2 class="text-3xl font-bold mb-4 brand-text-color">Dashboard Intuitivo</h2>
+                <p class="text-xl text-gray-700">
+                    Visualiza un resumen completo de tus finanzas en un solo lugar. Con nuestro **Dashboard**, puedes ver tu historial, un resumen mensual de ahorros (Ingresos - Gastos), y la distribución de tus egresos con gráficos circulares claros. ¡Toma el control a simple vista!
+                </p>
+            </div>
+            <div class="lg:w-1/2 flex justify-center">
+                <div class="device-mockup">
+                    <img src="../../assets/dashboard.png" alt="Dashboard de Finaizen" onerror="this.onerror=null;this.src='https://placehold.co/900x600/5bc5a7/ffffff?text=Dashboard';">
+                    <!-- Nota: He utilizado una imagen de placeholder, ya que no puedo cargar las imágenes subidas a un servidor web. -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Característica 2: Administrar Registros -->
+    <section class="feature-section">
+        <div class="content-container">
+            <div class="lg:w-1/2">
+                <h2 class="text-3xl font-bold mb-4 brand-text-color">Administra Registros de Ingresos y Egresos</h2>
+                <p class="text-xl text-gray-700">
+                    Organiza y revisa todos tus movimientos financieros de forma sencilla. Con la vista de **Administrar Registros**, puedes filtrar, ordenar y editar tus ingresos recurrentes (como tu sueldo o becas) y tus egresos (como suscripciones o compras diarias) para mantener todo bajo control.
+                </p>
+            </div>
+            <div class="lg:w-1/2 flex justify-center">
+                <div class="device-mockup">
+                    <img src="../../assets/administrar_registros.png" alt="Administrar Registros de Finaizen" onerror="this.onerror=null;this.src='https://placehold.co/900x600/3498db/ffffff?text=Administrar+Registros';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Característica 3: Nuevo Ingreso -->
+    <section class="feature-section bg-white">
+        <div class="content-container">
+            <div class="lg:w-1/2">
+                <h2 class="text-3xl font-bold mb-4 brand-text-color">Registra un Nuevo Ingreso</h2>
+                <p class="text-xl text-gray-700">
+                    Registrar tus fuentes de dinero es fácil. Con la pantalla de **Nuevo Ingreso**, puedes especificar el monto, una descripción y la frecuencia (diaria, semanal, mensual, etc.) para que se añada automáticamente a tu flujo de caja.
+                </p>
+            </div>
+            <div class="lg:w-1/2 flex justify-center">
+                <div class="device-mockup">
+                    <img src="../../assets/nuevo_ingreso.png" alt="Formulario de Nuevo Ingreso de Finaizen" onerror="this.onerror=null;this.src='https://placehold.co/900x600/2ecc71/ffffff?text=Nuevo+Ingreso';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Característica 4: Nuevo Egreso -->
+    <section class="feature-section">
+        <div class="content-container">
+            <div class="lg:w-1/2">
+                <h2 class="text-3xl font-bold mb-4 brand-text-color">Registra un Nuevo Egreso</h2>
+                <p class="text-xl text-gray-700">
+                    Clasifica tus gastos con la pantalla de **Nuevo Egreso**. Puedes asignarles una clasificación (Prioritario o Secundario), elegir la frecuencia (Mensual, Semanal, etc.) y seleccionar la fecha exacta, facilitando el seguimiento y la toma de decisiones.
+                </p>
+            </div>
+            <div class="lg:w-1/2 flex justify-center">
+                <div class="device-mockup">
+                    <img src="../../assets/nuevo_egreso.png" alt="Formulario de Nuevo Egreso de Finaizen" onerror="this.onerror=null;this.src='https://placehold.co/900x600/e74c3c/ffffff?text=Nuevo+Egreso';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Característica 5: Plan de Ahorro -->
+    <section class="feature-section bg-white">
+        <div class="content-container">
+            <div class="lg:w-1/2">
+                <h2 class="text-3xl font-bold mb-4 brand-text-color">Planifica tus Ahorros</h2>
+                <p class="text-xl text-gray-700">
+                    Convierte tus metas en realidad. Con la herramienta de **Plan de Ahorro**, puedes definir cuánto deseas ahorrar mensualmente (por porcentaje o monto fijo) y la app te ayudará a calcular cómo alcanzar esa meta, permitiéndote filtrar por gastos prioritarios.
+                </p>
+            </div>
+            <div class="lg:w-1/2 flex justify-center">
+                <div class="device-mockup">
+                    <img src="../../assets/plan_ahorro.png" alt="Plan de Ahorro de Finaizen" onerror="this.onerror=null;this.src='https://placehold.co/900x600/9b59b6/ffffff?text=Plan+de+Ahorro';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Característica 6: Presupuesto -->
+    <section class="feature-section">
+        <div class="content-container">
+            <div class="lg:w-1/2">
+                <h2 class="text-3xl font-bold mb-4 brand-text-color">Gestiona tus Presupuestos Mensuales</h2>
+                <p class="text-xl text-gray-700">
+                    Evita gastar de más. Crea **Presupuestos Mensuales** para categorías clave como Comida, Transporte o Suscripciones. Finaizen te avisará con alertas claras si estás cerca de exceder tu límite, permitiéndote "Tomar medidas" a tiempo.
+                </p>
+            </div>
+            <div class="lg:w-1/2 flex justify-center">
+                <div class="device-mockup">
+                    <img src="../../assets/presupuestos.png" alt="Presupuestos Mensuales de Finaizen" onerror="this.onerror=null;this.src='https://placehold.co/900x600/f39c12/ffffff?text=Presupuestos';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Información de Contacto -->
+    <footer class="contact-section">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Contacto</h3>
+                <p>📧 Email: soporte@finaizen.com</p>
+                <p>📞 Teléfono: +593 99 123 4567</p>
+                <p>📍 Dirección: Quito, Ecuador</p>
+            </div>
+            
+            <div class="social-media">
+                <h3>Redes Sociales</h3>
+                <div class="social-links">
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">Twitter</a>
+                    <a href="#" class="social-icon">LinkedIn</a>
+                </div>
+            </div>
+            
+            <div class="tech-support">
+                <h3>Asistencia Técnica</h3>
+                <p>¿Necesitas ayuda inmediata?</p>
+                <button class="btn btn-support">Abrir Chat de Soporte</button>
+                <p class="copyright">© 2024 Finaizen. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

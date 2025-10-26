@@ -1,0 +1,73 @@
+<!-- src/pages/User/config_notificaciones.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificaciones | Finaizen</title>
+    <!-- Estilos base y del sidebar -->
+    <link rel="stylesheet" href="../../css/style/base/main.css">
+    <link rel="stylesheet" href="../../css/style/components/sidebar.css">
+    <!-- Estilos específicos para esta página -->
+    <link rel="stylesheet" href="../../css/style/pages/config_notificaciones.css">
+</head>
+
+<body class="layout-centered">
+    <div class="container">
+        <!-- El sidebar de configuración se cargará aquí -->
+        <div id="sidebar-container" data-sidebar="config"></div>
+
+        <!-- ===== INICIO DEL CONTENIDO PRINCIPAL ===== -->
+        <main class="config-page main-content">
+            <div class="card notifications-card">
+                <h1>Notificaciones</h1>
+                <p class="subtitle">Gestiona tus recordatorios para nunca olvidar un pago.</p>
+                
+                <div class="filter-bar">
+                    <span>Filtrar por:</span>
+                    <select id="notification-filter">
+                        <option value="all">Todos (activos/inactivos)</option>
+                        <option value="active">Solo Activos</option>
+                        <option value="inactive">Solo Inactivos</option>
+                    </select>
+                </div>
+
+                <div class="notification-list">
+                    <!-- Notificación Inactiva -->
+                    <article class="notification-item" data-status="inactive">
+                        <div class="notification-info">
+                            <h3>Mensualidad</h3>
+                            <p>Recordatorio el día 19 de cada mes</p>
+                        </div>
+                        <button class="toggle-btn">Habilitar</button>
+                    </article>
+
+                    <!-- Notificación Activa -->
+                    <article class="notification-item" data-status="active">
+                        <div class="notification-info">
+                            <h3>Pagar la luz</h3>
+                            <p>Recordatorio el día 5 de cada mes</p>
+                        </div>
+                        <button class="toggle-btn">Deshabilitar</button>
+                    </article>
+
+                    <!-- Notificación Activa -->
+                    <article class="notification-item" data-status="active">
+                        <div class="notification-info">
+                            <h3>Pagar el internet</h3>
+                            <p>Recordatorio el día 2 de cada mes</p>
+                        </div>
+                        <button class="toggle-btn">Deshabilitar</button>
+                    </article>
+                </div>
+
+            </div>
+        </main>
+        <!-- ===== FIN DEL CONTENIDO PRINCIPAL ===== -->
+    </div>
+
+    <!-- JS para cargar el sidebar y manejar interacciones -->
+    <script src="../../js/configNotificaciones.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!-- src/pages/User/config_seguridad.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguridad | Finaizen</title>
+    <!-- Estilos base y del sidebar -->
+    <link rel="stylesheet" href="../../css/style/base/main.css">
+    <link rel="stylesheet" href="../../css/style/components/sidebar.css">
+    <!-- Estilos específicos para esta página -->
+    <link rel="stylesheet" href="../../css/style/pages/config_seguridad.css">
+</head>
+
+<body class="layout-centered">
+    <div class="container">
+        <!-- El sidebar de configuración se cargará aquí -->
+        <div id="sidebar-container" data-sidebar="config"></div>
+
+        <!-- ===== INICIO DEL CONTENIDO PRINCIPAL ===== -->
+        <main class="config-page main-content">
+            <div class="card security-card">
+                <h1>Seguridad</h1>
+                <p class="subtitle">Cambia tu contraseña de forma segura.</p>
+                
+                <form id="security-form" class="security-form">
+                    
+                    <div class="form-group">
+                        <label for="current-password">Contraseña actual:</label>
+                        <input type="password" id="current-password" name="current_password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="new-password">Nueva contraseña:</label>
+                        <input type="password" id="new-password" name="new_password" required minlength="8">
+                    </div>
+                    
+                    <!-- Campo añadido para mejorar la seguridad -->
+                    <div class="form-group">
+                        <label for="confirm-password">Confirmar nueva contraseña:</label>
+                        <input type="password" id="confirm-password" name="confirm_password" required minlength="8">
+                        <p id="password-error" class="error-message"></p>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <!-- ===== FIN DEL CONTENIDO PRINCIPAL ===== -->
+    </div>
+
+    <!-- JS para cargar el sidebar y manejar interacciones -->
+    <script src="../../js/configSeguridad.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

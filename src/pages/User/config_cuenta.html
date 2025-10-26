@@ -1,0 +1,89 @@
+<!-- src/pages/User/config_cuenta.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración de Cuenta | Finaizen</title>
+    <!-- Estilos base y del sidebar (los mismos que usas en el dashboard) -->
+    <link rel="stylesheet" href="../../css/style/base/main.css">
+    <link rel="stylesheet" href="../../css/style/components/sidebar.css">
+    <!-- Estilos específicos para esta página -->
+    <link rel="stylesheet" href="../../css/style/pages/config_cuenta.css">
+</head>
+
+<body class="layout-centered">
+    <div class="container">
+        <!-- El sidebar de configuración se cargará aquí dinámicamente -->
+        <div id="sidebar-container" data-sidebar="config"></div>
+
+        <!-- ===== INICIO DEL CONTENIDO PRINCIPAL ===== -->
+        <main class="config-page main-content">
+            <div class="card account-form-card">
+                <h1>Cuenta</h1>
+                <p class="subtitle">Actualiza tu información personal aquí.</p>
+                
+                <form id="account-form" class="account-form">
+                    <!-- Fila 1: Nombre y Apellido -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" value="Kevin" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellido">Apellido:</label>
+                            <input type="text" id="apellido" name="apellido" value="Perez" required>
+                        </div>
+                    </div>
+
+                    <!-- Fila 2: Correo -->
+                    <div class="form-group">
+                        <label for="correo">Correo:</label>
+                        <input type="email" id="correo" name="correo" value="kevin.perez05@epn.edu.ec" required>
+                    </div>
+
+                    <!-- Fila 3: Fecha de Nacimiento -->
+                    <div class="form-group">
+                        <label for="fecha-nacimiento">Fecha de nacimiento:</label>
+                        <!-- Usar type="date" es mejor para la experiencia de usuario -->
+                        <input type="date" id="fecha-nacimiento" name="fecha_nacimiento" value="2002-04-08">
+                    </div>
+
+                    <!-- Fila 4: País y Ciudad -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pais">País:</label>
+                            <input type="text" id="pais" name="pais" value="Ecuador">
+                        </div>
+                        <div class="form-group">
+                            <label for="ciudad">Ciudad:</label>
+                            <input type="text" id="ciudad" name="ciudad" value="Quito">
+                        </div>
+                    </div>
+
+                    <!-- Fila 5: Género -->
+                    <div class="form-group">
+                        <label for="genero">Género:</label>
+                         <!-- Un select es más apropiado aquí -->
+                        <select id="genero" name="genero">
+                            <option value="Hombre" selected>Hombre</option>
+                            <option value="Mujer">Mujer</option>
+                            <option value="Otro">Otro</option>
+                            <option value="Prefiero no decirlo">Prefiero no decirlo</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+        <!-- ===== FIN DEL CONTENIDO PRINCIPAL ===== -->
+    </div>
+
+    <!-- JS para cargar el sidebar y manejar interacciones -->
+    <script src="../../js/configCuenta.js"></script>
+    <script src="../../js/main.js"></script> <!-- Si tienes un JS principal -->
+</body>
+</html>

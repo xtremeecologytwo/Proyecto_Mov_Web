@@ -1,18 +1,3 @@
-document.addEventListener("DOMContentLoaded", () =>{
-    const sidebarContainer = document.getElementById("sidebar-container");
-fetch('../../components/sidebar_admin.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('sidebar-container').innerHTML = data;
-        })
-        .catch(error => console.error('Error al cargar el sidebar:', error));
-
-});
-
-fetch('../../components/sidebar_admin.html')
-        .then(response => response.ok ? response.text() : Promise.reject('Sidebar no encontrado'))
-        .then(data => document.getElementById('sidebar-container').innerHTML = data)
-        .catch(error => console.error('Error al cargar sidebar:', error));
 
     const supportTickets = [
         { id: 485, user: 'marta.f@gmail.com', subject: 'Ingreso semanal no se registra', date: '2025-10-18', status: 'nuevo' },

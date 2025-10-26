@@ -1,0 +1,53 @@
+/* src/css/style/pages/logros.css */
+.achievements-page { padding: 30px; background-color: #f8f9fa; }
+.achievements-page h1, .achievements-page .subtitle { text-align: center; }
+.achievements-page .subtitle { color: #6c757d; margin-bottom: 40px; }
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.achievement-card {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.achievement-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12); }
+
+.achievement-card__header { padding: 20px; text-align: center; border-bottom: 1px solid #e9ecef; }
+.achievement-card__header img { max-height: 40px; margin-bottom: 15px; }
+.achievement-card__header h3 { margin: 0; color: #343a40; }
+
+.achievement-card__body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+.achievement-card__body p { margin: 0 0 15px 0; color: #6c757d; line-height: 1.5; }
+.progress-bar { width: 100%; background-color: #e9ecef; border-radius: 20px; height: 12px; overflow: hidden; margin-bottom: 8px; }
+.progress-bar__fill { height: 100%; background: linear-gradient(90deg, #ffd700, #ffb300); border-radius: 20px; transition: width 0.5s ease-in-out; }
+.progress-text { font-size: 0.8em; font-weight: bold; color: #495057; }
+.reward { margin-top: auto; padding-top: 15px; font-size: 0.9em; }
+
+.achievement-card__footer { padding: 20px; background-color: #f8f9fa; text-align: center; }
+.btn { border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; }
+.btn-secondary { background-color: #e9ecef; color: #495057; }
+.btn-primary { background-color: #1a2a3a; color: #fff; }
+
+/* Estilos para logros completados */
+.achievement-card.is-completed { border-color: #ffd700; }
+.achievement-card.is-completed .achievement-card__header { background-color: #fffaf0; }
+.badge {
+    position: absolute;
+    top: 15px; right: -30px;
+    background-color: #ffd700;
+    color: #495057;
+    padding: 5px 30px;
+    font-size: 0.8em;
+    font-weight: bold;
+    transform: rotate(45deg);
+}
