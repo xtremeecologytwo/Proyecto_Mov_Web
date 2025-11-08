@@ -18,6 +18,12 @@ const Home = () => (
           <a className={styles.ctaSecondary} href="#docs">
             Ver documentación
           </a>
+          <a className={styles.ctaSecondary} href="/admin/dashboard">
+            Ver dashboard admin
+          </a>
+          <a className={styles.ctaSecondary} href="/user/dashboard">
+            Explorar dashboard usuario
+          </a>
         </div>
       </div>
       <div className={styles.heroCard}>

@@ -1,0 +1,105 @@
+.dashboardAdmin {
+  padding: 30px;
+  background-color: #f4f7fa;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e9ecef;
+}
+
+.summaryCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.summaryCard {
+  position: relative;
+  padding-left: 70px;
+  border-left: 5px solid;
+  text-align: left;
+}
+
+.summaryCard::before {
+  font-family: 'Segoe UI Symbol', sans-serif;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  opacity: 0.7;
+}
+
+.summaryCard:nth-child(1) {
+  border-left-color: #4e73df;
+}
+
+.summaryCard:nth-child(1)::before {
+  content: '👥';
+  color: #4e73df;
+}
+
+.summaryCard:nth-child(2) {
+  border-left-color: #1cc88a;
+}
+
+.summaryCard:nth-child(2)::before {
+  content: '➕';
+  color: #1cc88a;
+}
+
+.summaryCard:nth-child(3) {
+  border-left-color: #f6c23e;
+}
+
+.summaryCard:nth-child(3)::before {
+  content: '📄';
+  color: #f6c23e;
+}
+
+.summaryCard h3 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: bold;
+  color: #5a5c69;
+  text-transform: uppercase;
+}
+
+.summaryCard p {
+  margin: 5px 0 0 0;
+  font-size: 2em;
+  font-weight: bold;
+  color: #3a3b45;
+}
+
+.chartContainer {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.chartContainer h3 {
+  margin: 0 0 20px 0;
+  color: #4e73df;
+  font-size: 1.2em;
+}
+
+.chartWrapper {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 992px) {
+  .summaryCards {
+    grid-template-columns: 1fr;
+  }
+}
