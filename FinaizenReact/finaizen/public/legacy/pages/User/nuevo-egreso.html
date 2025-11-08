@@ -1,0 +1,127 @@
+<!-- src/pages/User/nuevo_egreso.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Egreso | Finaizen</title>
+
+    <!-- ⚡ VERIFICACIÓN INMEDIATA DE AUTENTICACIÓN -->
+    <script src="../../js/auth/authCheck.js"></script>
+
+    <!-- CSS Global y de la Página -->
+    <link rel="stylesheet" href="../../css/style/base/main.css">
+    <link rel="stylesheet" href="../../css/style/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/style/pages/nuevo_egreso.css">
+</head>
+<body>
+    <div class="container">
+        <!-- El Sidebar se carga aquí -->
+        <div id="sidebar-container" data-sidebar="user"></div>
+
+        <!-- Contenido principal de la página -->
+        <main class="main-content">
+            <form class="expense-form" novalidate>
+                <h1>Nuevo Egreso</h1>
+
+                <div class="form-group amount-group">
+                    <label for="monto">Monto:</label>
+                    <div class="amount-input-wrapper input-wrapper">
+                        <span>$</span>
+                        <input type="number" id="monto" value="15.00" step="0.01" placeholder="0.00" required>
+                        <div class="error-message"></div>
+                    </div>
+                </div>
+
+                <div class="form-group description-group">
+                    <label for="descripcion-egreso">Descripción:</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="descripcion-egreso" placeholder="Ej: Suscripción streaming, comida, etc." required>
+                        <div class="error-message"></div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <!-- Columna de Frecuencia -->
+                    <div class="form-group">
+                        <label>Frecuencia:</label>
+                        <ul class="frequency-list">
+                            <li data-value="diario">Diario</li>
+                            <li data-value="semanal">Semanal</li>
+                            <li data-value="mensual" class="active">Mensual</li>
+                            <li data-value="anual">Anual</li>
+                            <li data-value="ocasional">Ocasional</li>
+                        </ul>
+                    </div>
+
+                    <!-- Columna de Clasificación -->
+                    <div class="form-group">
+                        <label>Clasificación:</label>
+                        <div class="classification-selector">
+                            <button type="button" class="classification-btn active" data-value="prioritario">Prioritario</button>
+                            <button type="button" class="classification-btn" data-value="secundario">Secundario</button>
+                        </div>
+                    </div>
+
+                    <!-- Columna de Selección de Tiempo (Dinámica) -->
+                    <div class="form-group">
+                        <label id="time-selector-label">Seleccione día del mes:</label>
+                        
+                        <div class="input-wrapper">
+                            <div class="days-selector" id="days-selector" style="display: none;">
+                                <label class="day-checkbox"><input type="checkbox" data-day="lunes"><span>Lunes</span></label>
+                                <label class="day-checkbox"><input type="checkbox" data-day="martes"><span>Martes</span></label>
+                                <label class="day-checkbox"><input type="checkbox" data-day="miercoles"><span>Miércoles</span></label>
+                                <label class="day-checkbox"><input type="checkbox" data-day="jueves"><span>Jueves</span></label>
+                                <label class="day-checkbox"><input type="checkbox" data-day="viernes"><span>Viernes</span></label>
+                                <label class="day-checkbox"><input type="checkbox" data-day="sabado"><span>Sábado</span></label>
+                                <label class="day-checkbox"><input type="checkbox" data-day="domingo"><span>Domingo</span></label>
+                            </div>
+                            <div class="error-message"></div>
+                        </div>
+
+                        <div class="month-day-selector" id="month-day-selector" style="display: none;">
+                            <div class="calendar-grid" id="calendar-grid"></div>
+                            <input type="hidden" id="day-of-month" value="">
+                        </div>
+
+                        <div class="date-selector" id="date-selector" style="display: none;">
+                            <input type="date" id="specific-date">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notification-group">
+                    <label class="notification-checkbox-label">
+                        <input type="checkbox" id="activar-notificacion">
+                        <span>Activar notificación</span>
+                    </label>
+                    <div class="time-input-container" id="time-input-container" style="display: none;">
+                        <label for="hora-notificacion">Hora:</label>
+                        <div class="input-wrapper">
+                           <input type="time" id="hora-notificacion">
+                           <div class="error-message"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="save-btn">Guardar nuevo egreso</button>
+            </form>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../js/auth/sessionManager.js"></script>
+    <script src="../../js/auth/authGuard.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="../../js/nuevo_egreso.js"></script>
+
+    <script>
+        // Proteger esta página - solo usuarios autenticados
+        document.addEventListener('DOMContentLoaded', () => {
+            AuthGuard.requireUser();
+        });
+    </script>
+</body>
+</html>

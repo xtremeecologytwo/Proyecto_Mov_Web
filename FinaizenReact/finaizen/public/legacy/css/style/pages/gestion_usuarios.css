@@ -1,0 +1,40 @@
+#sidebar-container { position: fixed; top: 0; left: 0; height: 100vh; z-index: 1000; }
+        .main-content { margin-left: 290px; padding: 30px; display: flex; flex-direction: column; gap: 30px; }
+
+        .kpi-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .kpi-card { background-color: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); border-left: 5px solid #17a2b8; }
+        .kpi-card h4 { margin: 0 0 10px 0; color: #555; }
+        .kpi-card p { margin: 0; font-size: 2.5em; font-weight: 600; color: #1a2a44; }
+
+        .card { background-color: #fff; border-radius: 12px; padding: 1.5em; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        
+        .table-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .filters-bar { display: flex; gap: 20px; align-items: center; }
+        .filters-bar select, .filters-bar input { padding: 8px 12px; border-radius: 8px; border: 1px solid #ccc; }
+        
+        #btn-invite-user { padding: 10px 20px; background-color: #1a2a44; color: white; border: none; border-radius: 8px; cursor: pointer; }
+
+        .user-table { width: 100%; border-collapse: collapse; }
+        .user-table th, .user-table td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+        
+        .status, .role { padding: 5px 12px; border-radius: 15px; font-weight: 500; font-size: 0.9em; text-align: center; display: inline-block; }
+        .status.activo { background-color: #d4edda; color: #155724; }
+        .status.suspendido { background-color: #e2e3e5; color: #383d41; }
+        .role.usuario { background-color: #cce5ff; color: #004085; }
+        .role.admin { background-color: #f5c6cb; color: #721c24; }
+        .role.analista { background-color: #d1ecf1; color: #0c5460; }
+        .role.supervisor { background-color: #fff3cd; color: #856404; }
+        .role.soporte { background-color: #d6d8db; color: #383d41; }
+
+        .actions-dropdown { position: relative; }
+        .actions-dropdown button { background: none; border: none; font-size: 1.5em; cursor: pointer; }
+        .dropdown-menu { display: none; position: absolute; right: 0; background: white; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); z-index: 10; }
+        .dropdown-menu.show { display: block; }
+        .dropdown-menu a { display: block; padding: 10px 20px; text-decoration: none; color: black; }
+        .dropdown-menu a:hover { background-color: #f1f1f1; }
+
+        /* Estilos del Modal */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1001; display: none; justify-content: center; align-items: center; }
+        .modal-content { background: white; padding: 30px; border-radius: 12px; width: 500px; }
+        .modal-actions { text-align: right; margin-top: 20px; }
+        .modal-actions button { padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; }

@@ -1,0 +1,98 @@
+/* src/css/dashboard_admin.css - ESTILO PROFESIONAL Y MODERNO */
+
+/* --- Contenido Principal --- */
+main.dashboard-admin {
+    padding: 30px;
+    background-color: #f4f7fa; /* Un gris azulado muy claro */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* --- Estilo Base para Todas las Tarjetas --- */
+.card {
+    background-color: #ffffff;
+    border-radius: 12px; /* Bordes más suaves */
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+    border: 1px solid #e9ecef;
+}
+
+/* --- Fila Superior de Tarjetas de Resumen --- */
+.summary-cards {
+    display: grid; /* Usamos Grid para que las tarjetas sean siempre del mismo alto */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual ancho */
+    gap: 25px;
+}
+
+/* Las tarjetas de resumen ahora tienen un borde de color y un ícono */
+.summary-card {
+    position: relative;
+    padding-left: 70px; /* Espacio para el ícono */
+    border-left: 5px solid; /* Borde de color distintivo */
+    text-align: left;
+}
+/* Se añade un ícono pseudo-elemento para cada tarjeta */
+.summary-card::before {
+    font-family: 'Segoe UI Symbol', sans-serif; /* Usamos una fuente que tenga íconos */
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    opacity: 0.7;
+}
+
+/* Colores e íconos específicos para cada tarjeta */
+.summary-card:nth-child(1) { border-left-color: #4e73df; } /* Azul primario */
+.summary-card:nth-child(1)::before { content: '👥'; color: #4e73df; }
+
+.summary-card:nth-child(2) { border-left-color: #1cc88a; } /* Verde éxito */
+.summary-card:nth-child(2)::before { content: '➕'; color: #1cc88a; }
+
+.summary-card:nth-child(3) { border-left-color: #f6c23e; } /* Amarillo advertencia */
+.summary-card:nth-child(3)::before { content: '📄'; color: #f6c23e; }
+
+
+.summary-card h3 {
+    margin: 0;
+    font-size: 1em;
+    font-weight: bold;
+    color: #5a5c69; /* Gris oscuro */
+    text-transform: uppercase;
+}
+
+.summary-card p {
+    margin: 5px 0 0 0;
+    font-size: 2em;
+    font-weight: bold;
+    color: #3a3b45; /* Negro suave */
+}
+
+/* --- Contenedor del Gráfico --- */
+.chart-container {
+    flex-grow: 1; /* Ocupa el espacio vertical restante */
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-container h3 {
+    margin: 0 0 20px 0;
+    color: #4e73df; /* Título en azul primario */
+    font-size: 1.2em;
+}
+
+/* Wrapper para el gráfico */
+.chart-wrapper {
+    position: relative;
+    flex-grow: 1;
+    min-height: 300px;
+}
+
+#userGrowthChart {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

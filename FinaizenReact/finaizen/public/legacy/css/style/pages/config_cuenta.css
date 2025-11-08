@@ -1,0 +1,103 @@
+/* src/css/style/pages/config_cuenta.css */
+
+/* --- Contenedor Principal de la Página de Configuración --- */
+.config-page {
+    padding: 30px;
+    background-color: #f8f9fa; /* Fondo gris claro, consistente con el dashboard */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* --- Tarjeta Principal del Formulario (Diseño Mejorado) --- */
+.account-form-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 35px 45px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    width: 100%;
+    max-width: 800px; /* Ancho máximo para mejor legibilidad */
+}
+
+.account-form-card h1 {
+    font-size: 2em;
+    color: #343a40;
+    margin: 0 0 5px 0;
+}
+
+.account-form-card .subtitle {
+    font-size: 1em;
+    color: #6c757d;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 20px;
+}
+
+/* --- Estructura del Formulario --- */
+.account-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre filas y grupos */
+}
+
+.form-row {
+    display: flex;
+    gap: 50px; /* Espacio entre campos en la misma fila */
+}
+
+.form-group {
+    flex: 1; /* Permite que los grupos en una fila compartan el espacio */
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Estilos para Labels, Inputs y Selects --- */
+.form-group label {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #f8f9fa;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto al enfocar un campo */
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #4DB6AC; /* Teal pastel, como en tu ejemplo */
+    box-shadow: 0 0 0 3px rgba(77, 182, 172, 0.2);
+}
+
+/* --- Botón de Guardar --- */
+.form-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end; /* Alinea el botón a la derecha */
+}
+
+.btn.btn-primary {
+    background-color: #1a2a3a; /* Azul oscuro del sidebar */
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn.btn-primary:hover {
+    background-color: #2c445c;
+    transform: translateY(-2px);
+}

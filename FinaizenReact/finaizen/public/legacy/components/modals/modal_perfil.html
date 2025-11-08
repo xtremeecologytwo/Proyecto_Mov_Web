@@ -1,0 +1,61 @@
+<!-- src/components/profile_modal/modal_perfil.html -->
+
+<div id="profile-modal" class="modal-overlay">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h2 id="modal-title">Agregar nuevo perfil</h2>
+            <button class="modal-close" id="close-modal-btn" aria-label="Cerrar modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <form id="profile-form" class="modal-body">
+            <!-- Campo: Nombre del Perfil -->
+            <div class="form-group">
+                <label for="profile-name">
+                    <!-- ... SVG ... -->
+                    Nombre del perfil *
+                </label>
+                <input 
+                    type="text" 
+                    id="profile-name" 
+                    name="profile-name" 
+                    placeholder="Ej: Finanzas Personales, Emprendimiento..."
+                    required
+                    maxlength="50"
+                >
+                <span class="error-message"></span>
+            </div>
+
+            <!-- Campo: Moneda -->
+            <div class="form-group">
+                <label for="profile-currency">
+                    <!-- ... SVG ... -->
+                    Moneda *
+                </label>
+                <select id="profile-currency" name="profile-currency" required>
+                    <option value="">Selecciona una moneda</option>
+                    <!-- Las opciones se llenarán desde JavaScript -->
+                </select>
+                <span class="error-message"></span>
+            </div>
+
+            <!-- Campo Oculto: ID del Perfil -->
+            <input type="hidden" id="profile-id" name="profile-id">
+
+            <!-- Botones de Acción -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancel-btn">
+                    Cancelar
+                </button>
+                <button type="submit" class="btn btn-primary" id="submit-btn">
+                    <!-- ... SVG ... -->
+                    <span class="submit-text">Crear perfil</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

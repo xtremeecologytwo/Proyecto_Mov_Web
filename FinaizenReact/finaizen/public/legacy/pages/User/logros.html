@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logros | Finaizen</title>
+
+    <!-- ⚡ VERIFICACIÓN INMEDIATA DE AUTENTICACIÓN -->
+    <script src="../../js/auth/authCheck.js"></script>
+
+    <link rel="stylesheet" href="../../css/style/base/main.css">
+    <link rel="stylesheet" href="../../css/style/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/style/pages/logros.css">
+</head>
+<body>
+    <div class="container">
+        <div id="sidebar-container" data-sidebar="user"></div>
+
+        <main class="achievements-page main-content">
+            <h1>Mis Logros y Recompensas</h1>
+            <p class="subtitle">Completa desafíos, obtén recompensas y mejora tus hábitos financieros.</p>
+            
+            <div class="achievements-grid">
+                <!-- Logro en progreso -->
+                <article class="achievement-card" data-progress="25">
+                    <div class="achievement-card__header">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png" alt="McDonald's Logo">
+                        <h3>Rey de la Comida Rápida</h3>
+                    </div>
+                    <div class="achievement-card__body">
+                        <p>Registra 5 consumos en McDonald's para desbloquear.</p>
+                        <div class="progress-bar"><div class="progress-bar__fill"></div></div>
+                        <p class="progress-text">1 / 5 consumos</p>
+                        <p class="reward"><strong>Recompensa:</strong> $10 USD en productos McDonald's</p>
+                    </div>
+                    <div class="achievement-card__footer">
+                        <button class="btn btn-secondary">Subir Comprobante</button>
+                    </div>
+                </article>
+
+                <!-- Logro completado -->
+                <article class="achievement-card is-completed" data-progress="100">
+                    <div class="badge">Completado</div>
+                    <div class="achievement-card__header">
+                        <img src="https://www.pichincha.com/portal/EC/resource/img/logo-banco-pichincha.png" alt="Banco Pichincha Logo">
+                        <h3>Ahorrador Maestro</h3>
+                    </div>
+                    <div class="achievement-card__body">
+                        <p>Ahorra $200 en tu cuenta de Banco Pichincha.</p>
+                        <div class="progress-bar"><div class="progress-bar__fill"></div></div>
+                        <p class="progress-text">$200 / $200 ahorrados</p>
+                        <p class="reward"><strong>Recompensa:</strong> $5 USD acreditados en tu cuenta</p>
+                    </div>
+                    <div class="achievement-card__footer">
+                        <button class="btn btn-primary">Ver Recompensa</button>
+                    </div>
+                </article>
+
+                <!-- Otro logro -->
+                <article class="achievement-card" data-progress="80">
+                    <div class="achievement-card__header">
+                         <img src="https://www.pichincha.com/portal/EC/resource/img/logo-banco-pichincha.png" alt="Banco Pichincha Logo">
+                        <h3>Pagador Puntual</h3>
+                    </div>
+                    <div class="achievement-card__body">
+                        <p>Paga tu tarjeta de crédito a tiempo 3 meses seguidos.</p>
+                        <div class="progress-bar"><div class="progress-bar__fill"></div></div>
+                        <p class="progress-text">2 / 3 meses</p>
+                        <p class="reward"><strong>Recompensa:</strong> Aumento de Puntos Pichincha</p>
+                    </div>
+                    <div class="achievement-card__footer">
+                        <button class="btn btn-secondary">Registrar Pago</button>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </div>
+    <script src="../../js/auth/sessionManager.js"></script>
+    <script src="../../js/auth/authGuard.js"></script>
+    <script src="../../js/logros.js"></script>
+    <script src="../../js/main.js"></script>
+
+    <script>
+        // Proteger esta página - solo usuarios autenticados
+        document.addEventListener('DOMContentLoaded', () => {
+            AuthGuard.requireUser();
+        });
+    </script>
+</body>
+</html>

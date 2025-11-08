@@ -1,0 +1,101 @@
+<!-- src/pages/User/dashboard.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Finaizen</title>
+  
+  <!-- ⚡ VERIFICACIÓN INMEDIATA DE AUTENTICACIÓN (ANTES de cualquier contenido) -->
+  <script src="../../js/auth/authCheck.js"></script>
+  
+  <link rel="stylesheet" href="../../css/style/base/main.css">
+    <link rel="stylesheet" href="../../css/style/components/sidebar.css">
+  <link rel="stylesheet" href="../../css/style/pages/dashboard_user.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Sidebar se cargará aquí -->
+    <div id="sidebar-container" data-sidebar="user"></div>
+
+    <!-- ===== INICIO DEL CONTENIDO PRINCIPAL ===== -->
+    <main class="dashboard main-content">
+      
+      <!-- Fila Superior -->
+      <section class="dashboard-top">
+        
+        <div class="history card">
+          <h3>Historial</h3>
+          <p>Café <span class="negative">-$8.50</span></p>
+          <p>Super <span class="negative">-$45.20</span></p>
+          <p>Salario <span class="positive">+$1,500</span></p>
+          <a href="historial.html">Ver historial</a>
+          <div class="buttons">
+            <a href="nuevo-ingreso.html" class="btn ingreso">Ingreso</a>
+            <a href="nuevo-egreso.html" class="btn gasto">Gasto</a>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="card alert-card">
+            <h4>Comida</h4>
+            <p>$120.50 / $150</p>
+            <span class="alert">⚠️ ¡Cuidado! Te queda poco presupuesto.</span>
+          </div>
+          <div class="card normal-card">
+            <h4>Transporte</h4>
+            <p>$25.00 / $60</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Fila Inferior -->
+      <section class="dashboard-bottom">
+
+        <!-- Tarjeta del Gráfico de Línea -->
+        <div class="summary card">
+          <h3>Resumen Mensual</h3>
+          <p>Ahorro = Ingreso - gastos</p>
+          <h4>Ahorro: <span>$1800</span></h4>
+
+          <!-- LÍNEA AÑADIDA -->
+          <div class="chart-wrapper">
+            <canvas id="chart-line"></canvas>
+          </div>
+          <!-- FIN DE LÍNEA AÑADIDA -->
+
+        </div>
+
+        <!-- Tarjeta del Gráfico de Dona -->
+        <div class="distribution card">
+          <h4>Distribución</h4>
+
+          <!-- LÍNEA AÑADIDA -->
+          <div class="chart-wrapper">
+            <canvas id="chart-pie"></canvas>
+          </div>
+          <!-- FIN DE LÍNEA AÑADIDA -->
+          
+        </div>
+
+      </section>
+    </main>
+    <!-- ===== FIN DEL CONTENIDO PRINCIPAL ===== -->
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../../js/auth/sessionManager.js"></script>
+  <script src="../../js/auth/authGuard.js"></script>
+  <script src="../../js/dashboardUser.js"></script>
+  <script src="../../js/main.js"></script>
+
+  <script>
+    // Proteger esta página - solo usuarios autenticados
+    document.addEventListener('DOMContentLoaded', () => {
+        AuthGuard.requireUser();
+    });
+  </script>
+</body>
+</html>
