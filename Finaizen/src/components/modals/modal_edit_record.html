@@ -1,0 +1,65 @@
+<!-- src/components/edit_record_modal/modal_edit_record.html -->
+<div id="edit-record-modal" class="modal-overlay">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h2 id="modal-title-edit">Editar Registro</h2>
+            <button class="modal-close" id="close-edit-modal-btn">&times;</button>
+        </div>
+        <form id="edit-record-form" class="modal-body">
+            <input type="hidden" id="record-id" name="record-id">
+
+            <!-- Tipo de Registro -->
+            <div class="form-group type-selector">
+                <label class="radio-label">
+                    <input type="radio" name="record-type" value="ingreso" required>
+                    <span>Ingreso</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="record-type" value="egreso" required>
+                    <span>Egreso</span>
+                </label>
+            </div>
+
+            <!-- Nombre del Registro -->
+            <div class="form-group">
+                <label for="record-name">Nombre del Registro *</label>
+                <input type="text" id="record-name" name="record-name" placeholder="Ej: Pasantías, Suscripción..." required>
+            </div>
+
+            <!-- Monto -->
+            <div class="form-group">
+                <label for="record-amount">Monto *</label>
+                <input type="number" id="record-amount" name="record-amount" step="0.01" placeholder="0.00" required>
+            </div>
+
+            <!-- Frecuencia -->
+            <div class="form-group">
+                <label for="record-frequency">Frecuencia *</label>
+                <select id="record-frequency" name="record-frequency" required>
+                    <option value="ocasional">Ocasional</option>
+                    <option value="diario">Diario</option>
+                    <option value="semanal">Semanal</option>
+                    <option value="mensual">Mensual</option>
+                </select>
+            </div>
+
+            <!-- Campos Condicionales -->
+            <div id="weekly-options" class="form-group conditional-group" style="display: none;">
+                <label>Días de la semana</label>
+                <div class="day-selector">
+                    <!-- Checkboxes para los días -->
+                </div>
+            </div>
+            <div id="monthly-options" class="form-group conditional-group" style="display: none;">
+                <label for="monthly-day">Día del mes (1-31)</label>
+                <input type="number" id="monthly-day" name="monthly-day" min="1" max="31">
+            </div>
+
+            <!-- Botones -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancel-edit-btn">Cancelar</button>
+                <button type="submit" class="btn btn-primary" id="submit-edit-btn">Guardar Cambios</button>
+            </div>
+        </form>
+    </div>
+</div>

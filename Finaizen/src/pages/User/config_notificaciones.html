@@ -1,0 +1,89 @@
+<!-- src/pages/User/config_notificaciones.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificaciones | Finaizen</title>
+
+    <!-- ⚡ VERIFICACIÓN INMEDIATA DE AUTENTICACIÓN -->
+    <script src="../../js/auth/authCheck.js"></script>
+
+    <!-- Estilos base y del sidebar -->
+    <link rel="stylesheet" href="../../css/style/base/main.css">
+    <link rel="stylesheet" href="../../css/style/components/sidebar.css">
+    <!-- Estilos específicos para esta página -->
+    <link rel="stylesheet" href="../../css/style/pages/config_notificaciones.css">
+</head>
+
+<body>
+<!-- Plantilla oculta para items de notificación -->
+<template id="notification-item-template">
+    <article class="notification-item" data-id="" data-status="" data-type="">
+        <div class="notification-info">
+            <h3 class="notification-title"></h3>
+            <p class="notification-description"></p>
+            <div class="notification-meta">
+                <span class="notification-badge"></span>
+                <div class="advance-time-selector" title="Configura con cuánta anticipación deseas recibir la notificación">
+                    <label class="time-label">
+                        <span class="time-icon"></span>
+                        Notificar:
+                    </label>
+                    <select class="advance-time-select">
+                        <!-- Las opciones se llenarán desde JavaScript -->
+                    </select>
+                </div>
+            </div>
+        </div>
+        <button class="toggle-btn"></button>
+    </article>
+</template>
+
+    <div class="container">
+        <!-- El sidebar de configuración se cargará aquí -->
+        <div id="sidebar-container" data-sidebar="config"></div>
+
+        <!-- ===== INICIO DEL CONTENIDO PRINCIPAL ===== -->
+        <main class="config-page main-content">
+            <div class="card notifications-card">
+                <h1>Notificaciones</h1>
+                <p class="subtitle">Gestiona tus recordatorios para nunca olvidar un pago.</p>
+                
+                <div class="filter-bar">
+                    <span>Filtrar por:</span>
+                    <select id="notification-filter">
+                        <option value="all">Todos (activos/inactivos)</option>
+                        <option value="active">Solo Activos</option>
+                        <option value="inactive">Solo Inactivos</option>
+                    </select>
+                    <select id="notification-type-filter">
+                        <option value="all">Todos (ingresos/egresos)</option>
+                        <option value="income">Solo Ingresos</option>
+                        <option value="expense">Solo Egresos</option>
+                    </select>
+                </div>
+
+                <div class="notification-list">
+                    <!-- Las notificaciones se cargarán dinámicamente desde JavaScript -->
+                </div>
+
+            </div>
+        </main>
+        <!-- ===== FIN DEL CONTENIDO PRINCIPAL ===== -->
+    </div>
+
+    <!-- JS para cargar el sidebar y manejar interacciones -->
+    <script src="../../js/auth/sessionManager.js"></script>
+    <script src="../../js/auth/authGuard.js"></script>
+    <script src="../../js/configNotificaciones.js"></script>
+    <script src="../../js/main.js"></script>
+
+    <script>
+        // Proteger esta página - solo usuarios autenticados
+        document.addEventListener('DOMContentLoaded', () => {
+            AuthGuard.requireUser();
+        });
+    </script>
+</body>
+</html>

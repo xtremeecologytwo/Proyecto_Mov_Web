@@ -1,0 +1,302 @@
+/* src/css/sidebar.css */
+
+/* --- Estilos del Componente Sidebar --- */
+.sidebar {
+    background-color: #0a2a43;
+    color: white;
+    width: 250px; /* Ancho fijo para el estado expandido */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Permite scroll si el contenido es muy largo */
+    overflow-x: hidden;
+}
+
+/* Ocultar scrollbar pero mantener funcionalidad */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    flex-shrink: 0; /* No se comprime */
+}
+
+.sidebar-nav {
+    flex-grow: 1; /* Ocupa el espacio del medio */
+    overflow-y: auto; /* Scroll interno si es necesario */
+}
+
+/* Ocultar scrollbar del nav también */
+.sidebar-nav::-webkit-scrollbar {
+    width: 0;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav li {
+    padding: 0.7em 1em;
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+    color: white;
+    display: block; /* Asegura que el área de clic ocupe todo el li */
+    transition: background-color 0.3s;
+}
+
+.sidebar-nav a:hover {
+    background-color: #1c4c73;
+    border-radius: 6px;
+}
+
+/* Link de regresar */
+.sidebar-nav .back-link {
+    color: #81C784 !important;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.sidebar-nav .back-link:hover {
+    background-color: rgba(129, 199, 132, 0.1) !important;
+}
+
+/* Divisor en el menú */
+.sidebar-nav .divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0.5em 1em;
+    padding: 0;
+}
+
+.sidebar-footer {
+    text-align: center;
+    padding: 1em;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    flex-shrink: 0; /* No se comprime, siempre visible */
+    position: sticky; /* Se mantiene fijo en la parte inferior */
+    bottom: 0;
+    background-color: #0a2a43; /* Mismo color del sidebar */
+    z-index: 10;
+}
+
+.sidebar-footer .user img {
+    width: 30px;
+    border-radius: 50%;
+}
+
+/* --- Lógica de Posicionamiento y Colapso de la Sidebar --- */
+
+#sidebar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    width: 250px; /* El contenedor también necesita un ancho */
+    transition: width 0.3s ease;
+}
+
+/* --- ESTADO COLAPSADO --- */
+
+#sidebar-container.collapsed {
+    width: 80px; /* Ancho reducido del contenedor principal */
+}
+
+#sidebar-container.collapsed .sidebar {
+    width: 100%;
+    justify-content: space-between;
+}
+
+#sidebar-container.collapsed .sidebar-header h2,
+#sidebar-container.collapsed .sidebar-nav,
+#sidebar-container.collapsed .sidebar-footer .user p {
+    display: none;
+}
+
+#sidebar-container.collapsed .sidebar-header,
+#sidebar-container.collapsed .sidebar-footer .user {
+    justify-content: center;
+}
+
+/* --- MENÚ FLOTANTE DEL USUARIO --- */
+
+.sidebar-footer {
+    position: relative;
+}
+
+.sidebar-footer .user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.8em;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-footer .user:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-footer .user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.sidebar-footer .user p {
+    margin: 0;
+    font-size: 0.85em;
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+/* Menú desplegable del usuario */
+.user-dropdown {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 280px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 9999;
+    margin-bottom: 10px;
+}
+
+.user-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Header del dropdown */
+.dropdown-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1em;
+    border-bottom: 1px solid #e9ecef;
+    background: linear-gradient(135deg, #0a2a43 0%, #1c4c73 100%);
+    border-radius: 12px 12px 0 0;
+}
+
+.dropdown-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+
+.user-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.user-name {
+    margin: 0;
+    font-weight: 600;
+    font-size: 0.95em;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user-email {
+    margin: 0;
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.8);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Menú de opciones */
+.dropdown-menu {
+    list-style: none;
+    padding: 0.5em 0;
+    margin: 0;
+}
+
+.dropdown-menu li {
+    padding: 0;
+}
+
+.dropdown-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.75em 1em;
+    color: #343a40;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f8f9fa;
+    color: #0a2a43;
+}
+
+.dropdown-menu .icon {
+    font-size: 1.2em;
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.dropdown-menu .text {
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+/* Divisor */
+.dropdown-menu .divider {
+    height: 1px;
+    background-color: #e9ecef;
+    margin: 0.5em 0;
+}
+
+/* Link de cerrar sesión */
+.logout-link {
+    color: #dc3545 !important;
+}
+
+.logout-link:hover {
+    background-color: #fff5f5 !important;
+}
+
+/* Ajustes cuando el sidebar está colapsado */
+#sidebar-container.collapsed .user-dropdown {
+    left: 100%;
+    bottom: 0;
+    margin-left: 10px;
+    margin-bottom: 0;
+}

@@ -1,0 +1,356 @@
+/* src/css/style/pages/config_notificaciones.css */
+
+/* --- Estilos base de la página (reutilizados) --- */
+.config-page {
+    padding: 30px;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* --- Tarjeta Principal de Notificaciones --- */
+.notifications-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 35px 45px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    width: 100%;
+    max-width: 850px;
+}
+
+.notifications-card h1 {
+    font-size: 2em;
+    color: #343a40;
+    margin: 0 0 5px 0;
+}
+
+.notifications-card .subtitle {
+    font-size: 1em;
+    color: #6c757d;
+    margin-bottom: 30px;
+}
+
+/* --- Barra de Filtro --- */
+.filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.filter-bar span {
+    font-weight: 600;
+    color: #495057;
+}
+
+.filter-bar select {
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    font-size: 0.95em;
+    cursor: pointer;
+}
+
+.filter-bar select:focus {
+    outline: none;
+    border-color: #4DB6AC;
+    box-shadow: 0 0 0 3px rgba(77, 182, 172, 0.2);
+}
+
+/* --- Lista de Notificaciones --- */
+.notification-list {
+    display: flex;
+    flex-direction: column;
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Estilos personalizados para la barra de scroll */
+.notification-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.notification-list::-webkit-scrollbar-track {
+    background: #f1f3f5;
+    border-radius: 10px;
+}
+
+.notification-list::-webkit-scrollbar-thumb {
+    background: #4DB6AC;
+    border-radius: 10px;
+}
+
+.notification-list::-webkit-scrollbar-thumb:hover {
+    background: #26A69A;
+}
+
+.notification-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px;
+    border-bottom: 1px solid #e9ecef;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.notification-info {
+    flex: 1;
+}
+
+.notification-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+    color: #343a40;
+}
+
+.notification-info p {
+    margin: 0 0 12px 0;
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+/* --- Meta información (badges y selector) --- */
+.notification-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* --- Insignias de Tipo de Notificación --- */
+.notification-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.income-badge {
+    background-color: #E8F5E9;
+    color: #2E7D32;
+}
+
+.expense-badge {
+    background-color: #FFEBEE;
+    color: #C62828;
+}
+
+/* --- Selector de Tiempo de Anticipación --- */
+.advance-time-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #f8f9fa;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.advance-time-selector:hover {
+    background-color: #e9ecef;
+    border-color: #4DB6AC;
+}
+
+.advance-time-selector label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85em;
+    color: #495057;
+    font-weight: 500;
+    margin: 0;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.time-icon {
+    font-size: 1.1em;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.advance-time-select {
+    padding: 4px 8px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    background-color: #ffffff;
+    font-size: 0.85em;
+    color: #495057;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 150px;
+}
+
+.advance-time-select:hover {
+    border-color: #4DB6AC;
+}
+
+.advance-time-select:focus {
+    outline: none;
+    border-color: #4DB6AC;
+    box-shadow: 0 0 0 3px rgba(77, 182, 172, 0.15);
+}
+
+/* Estilos para notificaciones inactivas */
+.notification-item[data-status="inactive"] .advance-time-selector {
+    opacity: 0.6;
+    background-color: #f1f3f5;
+}
+
+.notification-item[data-status="inactive"] .advance-time-select {
+    background-color: #f8f9fa;
+    color: #868e96;
+    cursor: not-allowed;
+}
+
+.notification-item[data-status="inactive"] .notification-meta {
+    opacity: 0.7;
+}
+
+/* --- Botón de Habilitar/Deshabilitar --- */
+.toggle-btn {
+    background-color: transparent;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-size: 0.9em;
+}
+
+/* Estilos para el estado INACTIVO -> botón Habilitar */
+.notification-item[data-status="inactive"] .toggle-btn {
+    color: #388E3C; /* Verde oscuro */
+}
+.notification-item[data-status="inactive"] .toggle-btn:hover {
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+/* Estilos para el estado ACTIVO -> botón Deshabilitar */
+.notification-item[data-status="active"] .toggle-btn {
+    color: #0288D1; /* Azul oscuro */
+}
+.notification-item[data-status="active"] .toggle-btn:hover {
+    background-color: rgba(3, 169, 244, 0.1);
+}
+
+/* --- Mensaje cuando no hay resultados --- */
+.notification-list:empty::after {
+    content: 'No hay notificaciones que coincidan con los filtros seleccionados.';
+    display: block;
+    text-align: center;
+    padding: 40px 20px;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .config-page {
+        padding: 15px;
+    }
+
+    .notifications-card {
+        padding: 25px 20px;
+    }
+
+    .notifications-card h1 {
+        font-size: 1.5em;
+    }
+
+    .filter-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .filter-bar select {
+        width: 100%;
+    }
+
+    .notification-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 15px 10px;
+    }
+
+    .notification-info {
+        width: 100%;
+    }
+
+    .notification-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .advance-time-selector {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .advance-time-select {
+        width: 100%;
+    }
+
+    .toggle-btn {
+        align-self: flex-end;
+        padding: 10px 20px;
+    }
+
+    .notification-list {
+        max-height: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .notifications-card h1 {
+        font-size: 1.3em;
+    }
+
+    .notification-badge {
+        font-size: 0.7em;
+        padding: 3px 10px;
+    }
+
+    .notification-info h3 {
+        font-size: 1em;
+    }
+
+    .notification-info p {
+        font-size: 0.85em;
+    }
+
+    .advance-time-selector label {
+        font-size: 0.8em;
+    }
+
+    .advance-time-select {
+        font-size: 0.8em;
+        min-width: 100%;
+    }
+}

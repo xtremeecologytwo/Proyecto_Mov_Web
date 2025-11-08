@@ -1,0 +1,195 @@
+/* Archivo Completo: css/dashboard_user.css - REDISEÑO SOFISTICADO PASTEL */
+
+/* --- Contenido Principal (Fondo Claro y Suave) --- */
+main.dashboard {
+    padding: 30px;
+    background-color: #f8f9fa; /* Un gris muy claro, casi blanco */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* --- Estructura de Filas --- */
+.dashboard-top,
+.dashboard-bottom {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* --- Estilo Base para Todas las Tarjetas (Claro y Sofisticado) --- */
+.card {
+    background-color: #ffffff;
+    color: #343a40; /* Texto oscuro principal */
+    border-radius: 16px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e9ecef; /* Borde muy sutil */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07); /* Sombra suave y difuminada */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.09);
+}
+
+/* --- Distribución de Anchos --- */
+.history { 
+    flex: 0 0 280px; /* Ancho fijo más pequeño */
+    max-width: 280px;
+}
+.cards { flex: 2; }
+.summary { flex: 3; }
+.distribution { flex: 1; }
+
+/* --- Tarjeta de Historial --- */
+.history h3 { 
+    margin-top: 0;
+    color: #343a40;
+}
+.history p {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 0;
+    color: #6c757d; /* Texto secundario gris */
+}
+.history a {
+    color: #4DB6AC; /* Teal pastel */
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    margin-top: auto;
+    padding-top: 20px;
+}
+.positive { color: #81C784; font-weight: bold; } /* Verde pastel */
+.negative { color: #E57373; font-weight: bold; } /* Rojo/Rosa pastel */
+
+/* --- Contenedor de Tarjetas de Presupuesto --- */
+.cards {
+    background: none; box-shadow: none; padding: 0; border: none;
+    display: flex; flex-direction: column; gap: 15px;
+}
+.alert-card h4, .normal-card h4, .alert-card p, .normal-card p {
+    margin: 0;
+    color: #343a40;
+}
+.alert {
+    color: #FFB74D; /* Naranja pastel */
+}
+
+/* --- Tarjetas de Gráficos --- */
+.summary h3, .distribution h4 {
+    margin-top: 0;
+    color: #343a40;
+}
+.summary p {
+    color: #6c757d;
+    margin: 0;
+}
+.summary h4 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #343a40;
+}
+
+/* --- Contenedores de Gráficos (sin cambios de layout) --- */
+.chart-wrapper {
+    position: relative;
+    flex-grow: 1;
+    min-height: 250px;
+}
+#chart-line, #chart-pie {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* --- Botones Ingreso/Egreso --- */
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* Centrar los botones */
+    margin-top: auto; /* Empujar hacia abajo */
+    padding-top: 15px;
+}
+
+.btn.ingreso, .btn.gasto {
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+    flex: 1; /* Los botones ocupan el mismo ancho */
+    text-decoration: none; /* Sin subrayado para los enlaces */
+    text-align: center; /* Centrar el texto */
+    display: inline-block; /* Para que funcionen correctamente como enlaces */
+}
+.btn.ingreso { background-color: #81C784; } /* Verde pastel */
+.btn.gasto { background-color: #E57373; } /* Rojo/Rosa pastel */
+.btn:hover {
+    opacity: 0.85;
+}
+
+/* --- Responsividad --- */
+@media (max-width: 1200px) {
+    .dashboard-top {
+        flex-wrap: wrap;
+    }
+    
+    .history {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    
+    .cards {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 968px) {
+    main.dashboard {
+        padding: 20px;
+    }
+    
+    .dashboard-top,
+    .dashboard-bottom {
+        flex-direction: column;
+    }
+    
+    .history,
+    .cards,
+    .summary,
+    .distribution {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    
+    .chart-wrapper {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    main.dashboard {
+        padding: 15px;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+    
+    .buttons {
+        flex-direction: column;
+    }
+    
+    .btn.ingreso, .btn.gasto {
+        width: 100%;
+    }
+}
