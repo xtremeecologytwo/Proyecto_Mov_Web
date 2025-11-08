@@ -1,0 +1,98 @@
+<!-- src/pages/User/administrar_registros.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Registros | Finaizen</title>
+    
+    <!-- ⚡ VERIFICACIÓN INMEDIATA DE AUTENTICACIÓN (ANTES de cualquier contenido) -->
+    <script src="../../js/auth/authCheck.js"></script>
+    
+    <!-- CSS Global y Específico -->
+    <link rel="stylesheet" href="../../css/style/base/main.css">
+    <link rel="stylesheet" href="../../css/style/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/style/pages/administrar_registros.css">
+    <link rel="stylesheet" href="../../css/style/components/confirm dialog/confirm_dialog.css">
+    <link rel="stylesheet" href="../../css/style/components/modals/modal_edit_record.css">
+</head>
+<body>
+    <!-- AÑADIR LOS PLACEHOLDERS PARA LOS COMPONENTES -->
+    <div id="edit-modal-placeholder"></div>
+    <div id="confirm-dialog-placeholder"></div>
+
+    <div class="container">
+        <!-- El Sidebar se carga aquí -->
+        <div id="sidebar-container" data-sidebar="user"></div>
+
+        <!-- Contenido principal de la página -->
+        <main class="main-content">
+            <div class="records-manager">
+                <h1>Administrar registros</h1>
+
+                <!-- Filtros y Ordenamiento -->
+                <div class="filters-container">
+                    <div class="filter-group">
+                        <label for="filter-by">Filtrar por:</label>
+                        <select id="filter-by">
+                            <option value="todos">Todos</option>
+                            <option value="mensual">Mensual</option>
+                            <option value="semanal">Semanal</option>
+                            <option value="ocasional">Ocasional</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="sort-by">Ordenar por:</label>
+                        <select id="sort-by">
+                            <option value="fecha">Fecha</option>
+                            <option value="monto-asc">Monto (menor a mayor)</option>
+                            <option value="monto-desc">Monto (mayor a menor)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Columnas de Ingresos y Egresos -->
+                <div class="records-columns">
+                    <!-- Columna de Ingresos -->
+                    <div class="column incomes-column">
+                        <h2>Ingresos:</h2>
+                        <div class="records-list" id="incomes-list">
+                            <!-- Los ingresos se insertarán aquí con JavaScript -->
+                        </div>
+                    </div>
+                    <!-- Columna de Egresos -->
+                    <div class="column expenses-column">
+                        <h2>Egresos:</h2>
+                        <div class="records-list" id="expenses-list">
+                            <!-- Los egresos se insertarán aquí con JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botones de Acción -->
+                <div class="action-buttons">
+                    <a href="nuevo-ingreso.html" class="btn-action btn-income">Crear nuevo ingreso</a>
+                    <a href="nuevo-egreso.html" class="btn-action btn-expense">Crear nuevo egreso</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+     <!-- Scripts (el orden es importante) -->
+    <script src="../../js/auth/sessionManager.js"></script>
+    <script src="../../js/auth/authGuard.js"></script>
+    <!-- 1. Definiciones de los componentes -->
+    <script src="../../js/components/modals/modal_edit_record.js"></script>
+    <script src="../../js/components/confim dialog/confirm_dialog.js"></script>
+    <!-- 2. Orquestador y lógica de la página -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/administrar_registros.js"></script>
+
+    <script>
+        // Proteger esta página - solo usuarios autenticados
+        document.addEventListener('DOMContentLoaded', () => {
+            AuthGuard.requireUser();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<div class="modal-overlay-ia" style="display: none;">
+    <div class="modal-content-ia">
+        <div class="modal-header-ia">
+            <h3 class="modal-title-ia">Corregir Clasificación de IA</h3>
+            <button class="modal-close-ia" aria-label="Cerrar modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <div class="modal-body-ia">
+            <!-- Información del registro original -->
+            <div class="original-info">
+                <h4>📝 Información Original</h4>
+                <div class="info-row">
+                    <span class="label">Descripción del usuario:</span>
+                    <span class="value original-description"></span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Palabra clave detectada (IA):</span>
+                    <span class="value original-keyword"></span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Categoría asignada (IA):</span>
+                    <span class="value original-category"></span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Nivel de confianza:</span>
+                    <span class="value original-confidence"></span>
+                </div>
+            </div>
+
+            <!-- Formulario de corrección -->
+            <form class="correction-form">
+                <!-- Análisis de palabras clave -->
+                <div class="form-section">
+                    <h4>🔍 Análisis de Palabras Clave</h4>
+                    <p class="helper-text">El sistema ha detectado las siguientes palabras en la descripción. Selecciona cuál debería tener mayor peso:</p>
+                    <div class="keywords-detected"></div>
+                </div>
+
+                <!-- Nueva clasificación -->
+                <div class="form-section">
+                    <h4>✏️ Nueva Clasificación</h4>
+                    
+                    <div class="form-group">
+                        <label for="corrected-keyword">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                            Palabra clave principal *
+                        </label>
+                        <input 
+                            type="text" 
+                            id="corrected-keyword" 
+                            placeholder="Ej: cine, pareja, amigos..."
+                            required
+                        >
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="corrected-category">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"></path>
+                            </svg>
+                            Categoría/Área *
+                        </label>
+                        <select id="corrected-category" required>
+                            <option value="">Selecciona una categoría</option>
+                        </select>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="keyword-weight">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                            Peso de la palabra clave (0-100) *
+                        </label>
+                        <div class="weight-input-group">
+                            <input 
+                                type="range" 
+                                id="keyword-weight" 
+                                min="0" 
+                                max="100" 
+                                value="50"
+                            >
+                            <span class="weight-value">50</span>
+                        </div>
+                        <p class="helper-text">Mayor peso = Mayor relevancia en futuras clasificaciones</p>
+                    </div>
+                </div>
+
+                <!-- Opciones de entrenamiento -->
+                <div class="form-section training-options">
+                    <h4>🤖 Opciones de Entrenamiento del Modelo</h4>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="create-permanent-rule" name="create-rule">
+                        <label for="create-permanent-rule">
+                            <strong>Crear regla permanente</strong>
+                            <span class="helper-text">Esta palabra clave siempre se clasificará en esta categoría</span>
+                        </label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="apply-similar" name="apply-similar">
+                        <label for="apply-similar">
+                            <strong>Aplicar a descripciones similares</strong>
+                            <span class="helper-text">Buscar y corregir automáticamente descripciones parecidas</span>
+                        </label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="retrain-model" name="retrain-model" checked>
+                        <label for="retrain-model">
+                            <strong>Usar para reentrenamiento</strong>
+                            <span class="helper-text">Esta corrección mejorará el modelo de IA (recomendado)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Notas adicionales -->
+                <div class="form-section">
+                    <div class="form-group">
+                        <label for="correction-notes">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                            Notas (opcional)
+                        </label>
+                        <textarea 
+                            id="correction-notes" 
+                            rows="3"
+                            placeholder="Ej: Esta palabra suele indicar gastos relacionados con..."
+                        ></textarea>
+                    </div>
+                </div>
+
+                <!-- Botones de acción -->
+                <div class="modal-footer-ia">
+                    <button type="button" class="btn-secondary-ia cancel-correction">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn-primary-ia submit-correction">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Aplicar Corrección
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

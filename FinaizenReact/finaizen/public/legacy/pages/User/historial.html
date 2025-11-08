@@ -1,0 +1,320 @@
+<!-- src/pages/User/historial.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Transacciones | Finaizen</title>
+
+    <!-- ⚡ VERIFICACIÓN INMEDIATA DE AUTENTICACIÓN -->
+    <script src="../../js/auth/authCheck.js"></script>
+
+    <!-- CSS Global y Específico -->
+    <link rel="stylesheet" href="../../css/style/base/main.css">
+    <link rel="stylesheet" href="../../css/style/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/style/pages/historial.css">
+</head>
+<body>
+    <div class="container">
+        <!-- El Sidebar se carga aquí -->
+        <div id="sidebar-container" data-sidebar="user"></div>
+
+        <!-- Contenido principal de la página -->
+        <main class="main-content">
+            <div class="history-manager">
+                <h1>📊 Historial de Transacciones</h1>
+
+                <!-- Barra de Resumen -->
+                <div class="summary-bar">
+                    <div class="summary-item income-summary">
+                        <span class="summary-label">Total Ingresos</span>
+                        <span class="summary-amount positive">+$3,500.00</span>
+                    </div>
+                    <div class="summary-item expense-summary">
+                        <span class="summary-label">Total Egresos</span>
+                        <span class="summary-amount negative">-$1,700.00</span>
+                    </div>
+                    <div class="summary-item balance-summary">
+                        <span class="summary-label">Balance</span>
+                        <span class="summary-amount balance">$1,800.00</span>
+                    </div>
+                </div>
+
+                <!-- Filtros -->
+                <div class="filters-container">
+                    <div class="filter-group">
+                        <label for="filter-type">Tipo:</label>
+                        <select id="filter-type">
+                            <option value="todos">Todos</option>
+                            <option value="ingresos">Ingresos</option>
+                            <option value="egresos">Egresos</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-period">Período:</label>
+                        <select id="filter-period">
+                            <option value="mes-actual">Este mes</option>
+                            <option value="mes-anterior">Mes anterior</option>
+                            <option value="ultimos-3-meses">Últimos 3 meses</option>
+                            <option value="este-año">Este año</option>
+                            <option value="todos">Todo el historial</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="sort-by">Ordenar:</label>
+                        <select id="sort-by">
+                            <option value="fecha-desc">Más reciente</option>
+                            <option value="fecha-asc">Más antiguo</option>
+                            <option value="monto-desc">Mayor monto</option>
+                            <option value="monto-asc">Menor monto</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Lista de Transacciones -->
+                <div class="transactions-list" id="transactions-list">
+                    <!-- Las transacciones se insertarán aquí dinámicamente -->
+                    <!-- Ejemplo de transacción de ingreso -->
+                    <div class="transaction-card income">
+                        <div class="transaction-icon income-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5v14M5 12l7-7 7 7"/>
+                            </svg>
+                        </div>
+                        <div class="transaction-info">
+                            <h3>Salario Mensual</h3>
+                            <p class="transaction-date">25 de Octubre, 2024</p>
+                            <p class="transaction-category">💼 Trabajo</p>
+                        </div>
+                        <div class="transaction-details">
+                            <span class="transaction-amount positive">+$1,500.00</span>
+                            <span class="transaction-frequency">Mensual</span>
+                            <div class="transaction-actions">
+                                <button class="btn-edit" title="Editar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                                    </svg>
+                                </button>
+                                <button class="btn-delete" title="Eliminar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="3 6 5 6 21 6"/>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ejemplo de transacción de egreso -->
+                    <div class="transaction-card expense">
+                        <div class="transaction-icon expense-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 19V5M5 12l7 7 7-7"/>
+                            </svg>
+                        </div>
+                        <div class="transaction-info">
+                            <h3>Compra en Supermercado</h3>
+                            <p class="transaction-date">24 de Octubre, 2024</p>
+                            <p class="transaction-category">🛒 Comida</p>
+                        </div>
+                        <div class="transaction-details">
+                            <span class="transaction-amount negative">-$45.20</span>
+                            <span class="transaction-frequency">Ocasional</span>
+                            <div class="transaction-actions">
+                                <button class="btn-edit" title="Editar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                                    </svg>
+                                </button>
+                                <button class="btn-delete" title="Eliminar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="3 6 5 6 21 6"/>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="transaction-card expense">
+                        <div class="transaction-icon expense-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 19V5M5 12l7 7 7-7"/>
+                            </svg>
+                        </div>
+                        <div class="transaction-info">
+                            <h3>Netflix</h3>
+                            <p class="transaction-date">20 de Octubre, 2024</p>
+                            <p class="transaction-category">📺 Suscripciones</p>
+                        </div>
+                        <div class="transaction-details">
+                            <span class="transaction-amount negative">-$12.99</span>
+                            <span class="transaction-frequency">Mensual</span>
+                            <div class="transaction-actions">
+                                <button class="btn-edit" title="Editar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                                    </svg>
+                                </button>
+                                <button class="btn-delete" title="Eliminar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="3 6 5 6 21 6"/>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="transaction-card income">
+                        <div class="transaction-icon income-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5v14M5 12l7-7 7 7"/>
+                            </svg>
+                        </div>
+                        <div class="transaction-info">
+                            <h3>Freelance - Diseño Web</h3>
+                            <p class="transaction-date">18 de Octubre, 2024</p>
+                            <p class="transaction-category">💻 Trabajo Extra</p>
+                        </div>
+                        <div class="transaction-details">
+                            <span class="transaction-amount positive">+$350.00</span>
+                            <span class="transaction-frequency">Ocasional</span>
+                            <div class="transaction-actions">
+                                <button class="btn-edit" title="Editar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                                    </svg>
+                                </button>
+                                <button class="btn-delete" title="Eliminar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="3 6 5 6 21 6"/>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="transaction-card expense">
+                        <div class="transaction-icon expense-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 19V5M5 12l7 7 7-7"/>
+                            </svg>
+                        </div>
+                        <div class="transaction-info">
+                            <h3>Gasolina</h3>
+                            <p class="transaction-date">15 de Octubre, 2024</p>
+                            <p class="transaction-category">🚗 Transporte</p>
+                        </div>
+                        <div class="transaction-details">
+                            <span class="transaction-amount negative">-$30.00</span>
+                            <span class="transaction-frequency">Semanal</span>
+                            <div class="transaction-actions">
+                                <button class="btn-edit" title="Editar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                                    </svg>
+                                </button>
+                                <button class="btn-delete" title="Eliminar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="3 6 5 6 21 6"/>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="transaction-card expense">
+                        <div class="transaction-icon expense-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 19V5M5 12l7 7 7-7"/>
+                            </svg>
+                        </div>
+                        <div class="transaction-info">
+                            <h3>Café</h3>
+                            <p class="transaction-date">14 de Octubre, 2024</p>
+                            <p class="transaction-category">☕ Comida</p>
+                        </div>
+                        <div class="transaction-details">
+                            <span class="transaction-amount negative">-$8.50</span>
+                            <span class="transaction-frequency">Ocasional</span>
+                            <div class="transaction-actions">
+                                <button class="btn-edit" title="Editar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                                    </svg>
+                                </button>
+                                <button class="btn-delete" title="Eliminar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="3 6 5 6 21 6"/>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="transaction-card income">
+                        <div class="transaction-icon income-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5v14M5 12l7-7 7 7"/>
+                            </svg>
+                        </div>
+                        <div class="transaction-info">
+                            <h3>Beca Universitaria</h3>
+                            <p class="transaction-date">10 de Octubre, 2024</p>
+                            <p class="transaction-category">🎓 Educación</p>
+                        </div>
+                        <div class="transaction-details">
+                            <span class="transaction-amount positive">+$500.00</span>
+                            <span class="transaction-frequency">Mensual</span>
+                            <div class="transaction-actions">
+                                <button class="btn-edit" title="Editar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                                    </svg>
+                                </button>
+                                <button class="btn-delete" title="Eliminar">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="3 6 5 6 21 6"/>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botones de Acción -->
+                <div class="action-buttons">
+                    <a href="nuevo-ingreso.html" class="btn-action btn-income">➕ Nuevo Ingreso</a>
+                    <a href="nuevo-egreso.html" class="btn-action btn-expense">➖ Nuevo Egreso</a>
+                    <a href="administrar_registros.html" class="btn-action btn-secondary">📝 Administrar Registros</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../js/auth/sessionManager.js"></script>
+    <script src="../../js/auth/authGuard.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/historial.js"></script>
+
+    <script>
+        // Proteger esta página - solo usuarios autenticados
+        document.addEventListener('DOMContentLoaded', () => {
+            AuthGuard.requireUser();
+        });
+    </script>
+</body>
+</html>

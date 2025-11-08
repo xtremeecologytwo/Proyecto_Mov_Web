@@ -1,0 +1,157 @@
+/* src/css/style/pages/config_perfiles.css */
+
+/* --- Estilos base de la página (reutilizados) --- */
+.config-page {
+    padding: 30px;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Tarjeta Principal de Gestión de Perfiles --- */
+.profiles-management-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 35px 45px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    width: 100%;
+    max-width: 950px; /* Ancho máximo para la tarjeta contenedora */
+}
+
+.profiles-management-card h1 {
+    font-size: 2em;
+    color: #343a40;
+    margin: 0 0 5px 0;
+}
+
+.profiles-management-card .subtitle {
+    font-size: 1em;
+    color: #6c757d;
+    margin-bottom: 30px;
+}
+
+/* --- Contenedor de Perfiles (La clave del scroll horizontal) --- */
+.profiles-container {
+    display: flex; /* Alinea las tarjetas horizontalmente */
+    gap: 25px; /* Espacio entre tarjetas */
+    overflow-x: auto; /* ¡Magia! Habilita el scroll horizontal si el contenido se desborda */
+    padding: 10px 5px 20px 5px; /* Padding para que las sombras y el scrollbar no se corten */
+    margin: 0 -45px; /* Compensa el padding de la tarjeta padre para que el scroll llegue a los bordes */
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+/* Estilo sutil para la barra de scroll (solo en navegadores WebKit como Chrome/Safari) */
+.profiles-container::-webkit-scrollbar {
+    height: 8px;
+}
+.profiles-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.profiles-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+.profiles-container::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+
+
+/* --- Tarjeta de Perfil Individual --- */
+.profile-card {
+    flex: 0 0 240px; /* No crece, no se encoge, base de 240px de ancho */
+    border-radius: 16px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden; /* Asegura que los bordes redondeados se apliquen al contenido */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.profile-card:not(.profile-card--add):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.profile-card__header {
+    background-color: #007A7A; /* Un teal oscuro y elegante */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-icon {
+    color: #ffffff;
+}
+
+.profile-card__body {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-grow: 1; /* Ocupa el espacio restante */
+}
+
+.profile-name,
+.profile-currency {
+    margin: 0;
+    font-size: 1.1em;
+    color: #343a40;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-name span,
+.profile-currency span {
+    font-size: 0.8em;
+    color: #6c757d;
+}
+
+.profile-currency {
+    font-size: 0.95em;
+    margin-top: 8px;
+}
+
+.profile-currency strong {
+    color: #007A7A;
+    font-weight: 600;
+}
+
+.profile-card__actions {
+    margin-top: auto; /* Empuja las acciones hacia abajo */
+    font-size: 0.9em;
+}
+
+.action-link {
+    color: #007A7A;
+    text-decoration: none;
+    font-weight: 500;
+}
+.action-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Tarjeta Especial para "Agregar Perfil" --- */
+.profile-card--add {
+    background-color: #f8f9fa;
+    border: 2px dashed #ced4da;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #6c757d;
+    font-weight: 600;
+    gap: 10px;
+    box-shadow: none;
+}
+
+.profile-card--add:hover {
+    border-color: #007A7A;
+    color: #007A7A;
+    background-color: #e9f5f5;
+}

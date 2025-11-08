@@ -1,0 +1,60 @@
+<!-- src/pages/User/presupuestos.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuestos Mensuales | Finaizen</title>
+
+    <!-- ⚡ VERIFICACIÓN INMEDIATA DE AUTENTICACIÓN -->
+    <script src="../../js/auth/authCheck.js"></script>
+
+    <!-- CSS Global y Específico -->
+    <link rel="stylesheet" href="../../css/style/base/main.css">
+    <link rel="stylesheet" href="../../css/style/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/style/pages/presupuestos.css">
+    <!-- AÑADIR LOS CSS DE LOS COMPONENTES -->
+    <link rel="stylesheet" href="../../css/style/components/modals/modal_budget.css">
+    <link rel="stylesheet" href="../../css/style/components/confirm dialog/confirm_dialog.css">
+</head>
+<body>
+    <!-- AÑADIR LOS PLACEHOLDERS -->
+    <div id="budget-modal-placeholder"></div>
+    <div id="confirm-dialog-placeholder"></div>
+
+    <div class="container">
+        <!-- El Sidebar se carga aquí -->
+        <div id="sidebar-container" data-sidebar="user"></div>
+
+        <!-- Contenido principal de la página -->
+        <main class="main-content">
+            <div class="budget-manager">
+                <header class="manager-header">
+                    <h1>Presupuestos mensuales</h1>
+                    <button class="btn-add">Agregar</button>
+                </header>
+
+                <div class="budget-list" id="budget-list-container">
+                    <!-- Las tarjetas de presupuesto se insertarán aquí con JavaScript -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 1. Definiciones de los componentes -->
+    <script src="../../js/auth/sessionManager.js"></script>
+    <script src="../../js/auth/authGuard.js"></script>
+    <script src="../../js/components/modals/modal_budget.js"></script>
+    <script src="../../js/components/confim dialog/confirm_dialog.js"></script>
+    <!-- 2. Orquestador y lógica de la página -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/presupuestos.js"></script>
+
+    <script>
+        // Proteger esta página - solo usuarios autenticados
+        document.addEventListener('DOMContentLoaded', () => {
+            AuthGuard.requireUser();
+        });
+    </script>
+</body>
+</html>

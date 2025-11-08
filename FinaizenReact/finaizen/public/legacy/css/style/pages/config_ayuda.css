@@ -1,0 +1,103 @@
+/* src/css/style/pages/config_ayuda.css */
+
+/* --- Estilos base de la página (reutilizados) --- */
+.config-page {
+    padding: 30px;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* --- Tarjeta Principal del Formulario de Ayuda --- */
+.help-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 35px 45px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    width: 100%;
+    max-width: 700px; /* Ancho intermedio para este formulario */
+}
+
+.help-card h1 {
+    font-size: 2em;
+    color: #343a40;
+    margin: 0 0 5px 0;
+}
+
+.help-card .subtitle {
+    font-size: 1em;
+    color: #6c757d;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 20px;
+}
+
+/* --- Estructura del Formulario --- */
+.help-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Estilos para Labels, Inputs y Textarea --- */
+.form-group label {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: inherit; /* Asegura que la fuente sea la misma que el resto del sitio */
+    background-color: #f8f9fa;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite al usuario ajustar la altura, pero no el ancho */
+    min-height: 150px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4DB6AC;
+    box-shadow: 0 0 0 3px rgba(77, 182, 172, 0.2);
+}
+
+/* --- Botón de Enviar --- */
+.form-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn.btn-primary {
+    background-color: #1a2a3a;
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn.btn-primary:hover {
+    background-color: #2c445c;
+    transform: translateY(-2px);
+}

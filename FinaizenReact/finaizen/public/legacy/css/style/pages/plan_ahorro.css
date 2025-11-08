@@ -1,0 +1,166 @@
+/* src/css/plan_de_ahorro.css - REDISEÑO SOFISTICADO PASTEL */
+
+/* --- Fondo claro y centrado para la página --- */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #f8f9fa; /* Fondo gris muy claro */
+}
+
+.savings-planner {
+    background-color: #ffffff;
+    padding: 2.5em;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 900px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+/* --- Títulos --- */
+.savings-planner h1, .savings-planner .subtitle {
+    text-align: center;
+    color: #343a40;
+}
+.savings-planner .subtitle {
+    color: #6c757d;
+    margin-top: -1em;
+    margin-bottom: 2em;
+}
+
+/* --- Paneles --- */
+.panel {
+    background-color: #f8f9fa; /* Fondo ligeramente gris para los paneles internos */
+    padding: 1.5em 2em;
+    border: 1px solid #dee2e6;
+    border-radius: 16px;
+    transition: all 0.3s ease-in-out;
+}
+.planner-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2em;
+    margin-bottom: 2em;
+}
+.panel h2 {
+    margin-top: 0;
+    color: #343a40;
+}
+
+/* --- Panel de Filtros --- */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    color: #495057;
+}
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 0.8em;
+    accent-color: #4DB6AC; /* Color del check en tono pastel */
+}
+.button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5em;
+    margin-top: 1.5em;
+}
+.btn-filter {
+    background: transparent;
+    border: 2px solid #ced4da;
+    color: #495057;
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+.btn-filter:hover {
+    border-color: #4DB6AC;
+    color: #4DB6AC;
+}
+.btn-filter.active {
+    background: #4DB6AC;
+    color: white;
+    border-color: #4DB6AC;
+}
+
+/* --- Panel de Meta --- */
+.goal-panel .input-group {
+    display: flex;
+    gap: 1em;
+    margin: 1.5em 0;
+}
+.goal-panel input {
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 2px solid #dee2e6;
+    color: #343a40;
+    border-radius: 12px;
+    font-size: 1.1em;
+    transition: all 0.2s ease;
+}
+.goal-panel input:focus {
+    outline: none;
+    border-color: #4DB6AC;
+    box-shadow: 0 0 8px rgba(77, 182, 172, 0.3);
+}
+#calculate-btn {
+    background-color: #4DB6AC;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    width: 100%;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+#calculate-btn:hover {
+    opacity: 0.85;
+}
+
+/* --- Panel de Resultados --- */
+.result-panel {
+    text-align: center;
+    color: #495057;
+}
+.result-panel.hidden { display: none; }
+
+.alert-box {
+    background-color: #FFF3E0; /* Fondo naranja muy claro */
+    border: 2px solid #FFB74D;
+    color: #FB8C00;
+    padding: 1em;
+    border-radius: 15px;
+    margin: 1em auto;
+    max-width: 350px;
+}
+.alert-box h3 { margin: 0; font-size: 1.3em; }
+.alert-box p { margin: 0.3em 0 0 0; color: #FB8C00; }
+.suggestion-text { font-weight: bold; margin-top: 1.5em; }
+.options-group {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
+}
+.btn-option {
+    background-color: #4DB6AC;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+.btn-option:hover {
+    opacity: 0.85;
+}
