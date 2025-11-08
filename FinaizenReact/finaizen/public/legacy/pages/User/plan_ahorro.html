@@ -1,0 +1,90 @@
+<!-- src/pages/User/plan_de_ahorro.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Ahorro | Finaizen</title>
+
+    <!-- ⚡ VERIFICACIÓN INMEDIATA DE AUTENTICACIÓN -->
+    <script src="../../js/auth/authCheck.js"></script>
+
+    <!-- CSS Global y Específico -->
+    <link rel="stylesheet" href="../../css/style/base/main.css">
+    <link rel="stylesheet" href="../../css/style/components/sidebar.css">
+    <link rel="stylesheet" href="../../css/style/pages/plan_ahorro.css">
+</head>
+<body>
+    <div class="container">
+        <!-- El Sidebar se carga aquí -->
+        <div id="sidebar-container" data-sidebar="user"></div>
+
+        <!-- Contenido principal de la página -->
+        <main class="main-content">
+            <div class="savings-planner">
+                <h1>Plan de Ahorro</h1>
+                <p class="subtitle">Define tu meta y veamos como alcanzarla</p>
+
+                <div class="planner-grid">
+                    <!-- Panel de Filtros -->
+                    <section class="panel filter-panel">
+                        <h2>Filtro</h2>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="gastos-prioritarios">
+                            <label for="gastos-prioritarios">Usar gastos prioritarios</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="gastos-mayores" checked>
+                            <label for="gastos-mayores">Empezar por gastos mayores</label>
+                        </div>
+                        <div class="button-group">
+                            <button type="button" class="btn-filter" data-filter="diario">Diario</button>
+                            <button type="button" class="btn-filter active" data-filter="semana">Semana</button>
+                            <button type="button" class="btn-filter active" data-filter="mensual">Mensual</button>
+                            <button type="button" class="btn-filter" data-filter="anual">Anual</button>
+                        </div>
+                    </section>
+
+                    <!-- Panel de Meta -->
+                    <section class="panel goal-panel">
+                        <h2>Quiero ahorrar mensualmente...</h2>
+                        <div class="input-group">
+                            <input type="text" value="20%">
+                            <input type="text" value="$50">
+                        </div>
+                        <button type="button" id="calculate-btn">Calcular</button>
+                    </section>
+                </div>
+
+                <!-- Panel de Resultados (inicialmente oculto) -->
+                <section class="panel result-panel hidden">
+                    <h2>Resultado:</h2>
+                    <div class="alert-box">
+                        <h3>¡Te faltan $20!</h3>
+                        <p>para alcanzar un ahorro de $50</p>
+                    </div>
+                    <p class="suggestion-text">Te sugerimos estas 3 opciones para alcanzar la meta:</p>
+                    <div class="options-group">
+                        <button type="button" class="btn-option">Opcion 1</button>
+                        <button type="button" class="btn-option">Opcion 2</button>
+                        <button type="button" class="btn-option">Opcion 3</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../js/auth/sessionManager.js"></script>
+    <script src="../../js/auth/authGuard.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/plan_ahorro.js"></script>
+
+    <script>
+        // Proteger esta página - solo usuarios autenticados
+        document.addEventListener('DOMContentLoaded', () => {
+            AuthGuard.requireUser();
+        });
+    </script>
+</body>
+</html>

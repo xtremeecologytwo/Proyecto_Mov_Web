@@ -1,37 +1,58 @@
-import { useMemo } from 'react';
-import AdminDashboard from './pages/AdminDashboard';
+import { useCallback, useEffect, useState } from 'react';
 import Home from './pages/Home';
-import UserDashboard from './pages/UserDashboard';
+import LegacyFrame from './components/LegacyFrame';
+import legacyRouteGroups, { legacyRouteMap } from './routes/legacyRoutes';
 import styles from './App.module.css';
 
-const ROUTES = {
-  '/': Home,
-  '/admin/dashboard': AdminDashboard,
-  '/user/dashboard': UserDashboard,
-};
-
-const normalisePath = (path) => {
-  if (!path) {
-    return '/';
-  }
-
-  const withoutTrailing = path !== '/' ? path.replace(/\/+$/, '') : path;
-  return withoutTrailing || '/';
-};
+const HOME_PATH = '/';
 
 function App() {
-  const ActivePage = useMemo(() => {
-    if (typeof window === 'undefined') {
-      return Home;
-    }
+  const [currentPath, setCurrentPath] = useState(() => window.location.pathname || HOME_PATH);
 
-    const currentPath = normalisePath(window.location.pathname);
-    return ROUTES[currentPath] ?? Home;
+  useEffect(() => {
+    const handlePopState = () => {
+      setCurrentPath(window.location.pathname || HOME_PATH);
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
   }, []);
+
+  useEffect(() => {
+    if (currentPath !== HOME_PATH && !legacyRouteMap[currentPath]) {
+      window.history.replaceState(null, '', HOME_PATH);
+      setCurrentPath(HOME_PATH);
+    }
+  }, [currentPath]);
+
+  const navigate = useCallback(
+    (to, options = {}) => {
+      if (to === currentPath) {
+        return;
+      }
+
+      const method = options.replace ? 'replaceState' : 'pushState';
+      window.history[method](null, '', to);
+      setCurrentPath(to);
+    },
+    [currentPath]
+  );
+
+  const activeRoute = legacyRouteMap[currentPath];
 
   return (
     <div className={styles.app}>
-      <ActivePage />
+      {activeRoute ? (
+        <LegacyFrame
+          key={activeRoute.path}
+          src={activeRoute.htmlPath}
+          title={activeRoute.title}
+          currentPath={currentPath}
+          onNavigate={navigate}
+        />
+      ) : (
+        <Home onNavigate={navigate} legacyGroups={legacyRouteGroups} />
+      )}
     </div>
   );
 }

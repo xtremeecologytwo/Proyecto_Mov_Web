@@ -1,0 +1,69 @@
+/* src/css/main.css */
+
+/* --- Estilos Globales de la Página --- */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f6fa;
+    color: #222;
+    height: 100vh;
+}
+
+/* --- Contenedor Principal del Layout --- */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- Layout del Contenido Principal --- */
+.main-content {
+    flex: 1;
+    margin-left: 250px;
+    transition: margin-left 0.3s ease;
+}
+
+.main-content.sidebar-collapsed {
+    margin-left: 80px;
+}
+
+/* --- Layout Alternativo (Centrado) --- */
+body.layout-centered .main-content {
+    margin-left: 0;
+}
+
+body.layout-centered .main-content.sidebar-collapsed {
+    margin-left: 0;
+}
+
+/* En el modo centrado, la sidebar no es fija */
+body.layout-centered #sidebar-container {
+    position: static;
+    height: auto;
+}
+
+/* --- Clases de Utilidad Generales --- */
+.btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn.ingreso {
+    background-color: #1fc600;
+    color: white;
+}
+
+.btn.gasto {
+    background-color: #c60000;
+    color: white;
+}
+
+.positive {
+    color: green;
+}
+
+.negative {
+    color: red;
+}

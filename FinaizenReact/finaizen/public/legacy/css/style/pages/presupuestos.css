@@ -1,0 +1,140 @@
+/* src/css/presupuestos.css - REDISEÑO SOFISTICADO PASTEL */
+
+/* --- Fondo claro y centrado para la página --- */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #f8f9fa; /* Fondo gris muy claro */
+}
+
+/* --- Contenedor principal del gestor de presupuestos --- */
+.budget-manager {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 800px;
+    height: 85vh;
+    padding: 2em;
+    border-radius: 20px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Encabezado --- */
+.manager-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2em;
+    color: #343a40;
+}
+.manager-header h1 {
+    margin: 0;
+}
+.btn-add {
+    background-color: #4DB6AC; /* Teal pastel */
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+.btn-add:hover {
+    opacity: 0.85;
+}
+
+/* --- Lista de Presupuestos (con scroll sutil) --- */
+.budget-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+.budget-list::-webkit-scrollbar { width: 8px; }
+.budget-list::-webkit-scrollbar-track { background: #f1f3f5; border-radius: 4px; }
+.budget-list::-webkit-scrollbar-thumb { background: #ced4da; border-radius: 4px; }
+.budget-list::-webkit-scrollbar-thumb:hover { background: #adb5bd; }
+
+/* --- Tarjeta de Presupuesto Individual --- */
+.budget-card {
+    background-color: #f8f9fa;
+    padding: 1em 1.5em;
+    border-radius: 15px;
+    margin-bottom: 1.5em;
+    border-left: 5px solid; /* Borde de color según el estado */
+    border-top: 1px solid #e9ecef;
+    border-right: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.budget-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+.budget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8em;
+    color: #343a40;
+}
+.budget-header h2 {
+    margin: 0;
+    font-size: 1.3em;
+}
+.budget-header .amount {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #6c757d;
+}
+.budget-actions a {
+    text-decoration: none;
+    font-size: 0.9em;
+    margin-left: 1em;
+}
+.budget-actions a.edit { color: #4DB6AC; }
+.budget-actions a.delete { color: #E57373; }
+
+/* --- Barra de Progreso --- */
+.progress-bar {
+    background-color: #dee2e6;
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.progress {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* --- Alerta de texto --- */
+.alert-text {
+    font-size: 0.8em;
+    margin-top: 0.5em;
+    display: block;
+}
+
+/* --- Colores de Estado Pastel --- */
+/* Estado OK (verde) */
+.status-ok .progress { background-color: #81C784; }
+.status-ok { border-left-color: #81C784; }
+
+/* Estado Warning (naranja) */
+.status-warning .progress { background-color: #FFB74D; }
+.status-warning { border-left-color: #FFB74D; }
+.status-warning .alert-text { color: #FB8C00; }
+
+/* Estado Danger (rojo) */
+.status-danger .progress { background-color: #E57373; }
+.status-danger { border-left-color: #E57373; }
+.status-danger .alert-text { color: #E57373; }
+
+/* Estado Neutral (azul/teal) */
+.status-neutral .progress { background-color: #4DB6AC; }
+.status-neutral { border-left-color: #4DB6AC; }

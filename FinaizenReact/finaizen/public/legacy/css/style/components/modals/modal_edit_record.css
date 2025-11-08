@@ -1,0 +1,63 @@
+/* src/components/edit_record_modal/modal_edit_record.css */
+/* Estilos basados en modal_perfil.css con adaptaciones */
+
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 9999; opacity: 0; visibility: hidden; transition: all 0.3s ease;
+}
+.modal-overlay.active { opacity: 1; visibility: visible; }
+
+.modal-container {
+    background-color: #fff; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    max-width: 500px; width: 100%; transform: scale(0.95); transition: transform 0.3s ease;
+}
+.modal-overlay.active .modal-container { transform: scale(1); }
+
+.modal-header {
+    padding: 20px 25px; border-bottom: 1px solid #e9ecef;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.modal-header h2 { margin: 0; font-size: 1.5em; color: #343a40; }
+.modal-close { background: transparent; border: none; font-size: 2em; cursor: pointer; color: #adb5bd; transition: color 0.2s; }
+.modal-close:hover { color: #495057; }
+
+.modal-body { padding: 25px; }
+
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-weight: 600; color: #495057; margin-bottom: 8px; }
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+    width: 100%; padding: 12px 15px; border: 2px solid #e9ecef; border-radius: 10px;
+    font-size: 1em; background-color: #f8f9fa; transition: all 0.2s; box-sizing: border-box;
+}
+.form-group input:focus, .form-group select:focus {
+    outline: none; border-color: #4DB6AC; background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(77, 182, 172, 0.15);
+}
+
+.type-selector { display: flex; gap: 15px; margin-bottom: 25px; }
+.radio-label {
+    flex: 1; padding: 12px; border: 2px solid #e9ecef; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: all 0.2s;
+}
+.radio-label input { display: none; }
+.radio-label span { font-weight: 600; color: #6c757d; }
+.radio-label input:checked + span { color: #fff; }
+.radio-label:has(input[value="ingreso"]:checked) { background-color: #81C784; border-color: #81C784; }
+.radio-label:has(input[value="egreso"]:checked) { background-color: #E57373; border-color: #E57373; }
+
+.day-selector { display: flex; flex-wrap: wrap; gap: 10px; }
+.day-selector label {
+    padding: 8px 12px; border: 2px solid #e9ecef; border-radius: 8px;
+    cursor: pointer; user-select: none; font-weight: 500;
+}
+.day-selector input { display: none; }
+.day-selector input:checked + span { color: #4DB6AC; font-weight: 700; }
+.day-selector label:has(input:checked) { border-color: #4DB6AC; }
+
+.modal-footer { display: flex; gap: 12px; justify-content: flex-end; margin-top: 30px; }

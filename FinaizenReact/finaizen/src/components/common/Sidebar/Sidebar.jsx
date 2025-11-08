@@ -2,8 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './Sidebar.module.css';
 
 const NAV_LINKS = [
-  { label: 'Dashboard Admin', href: '/admin/dashboard' },
-  { label: 'Dashboard Usuario', href: '/user/dashboard' },
+  { label: 'Dashboard', href: '#dashboard' },
   { label: 'Inteligencia de mercado', href: '#market-intel' },
   { label: 'Supervisión de categorías (IA)', href: '#categories-ai' },
   { label: 'Reportes de Soporte', href: '#support-reports' },

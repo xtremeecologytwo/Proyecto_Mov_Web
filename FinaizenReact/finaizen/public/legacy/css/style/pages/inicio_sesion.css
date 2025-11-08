@@ -1,0 +1,147 @@
+ /* Configuracion de la fuente global y colores principales */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8;
+            color: #1f2937;
+        }
+        /* Color principal de la marca (similar a Splitwise: un verde/azul suave) */
+        .brand-color {
+            background-color: #5bc5a7; /* Verde/Azul principal de Finaizen */
+        }
+        .brand-text-color {
+            color: #5bc5a7;
+        }
+        /* Navbar fijo en la parte superior */
+        #navbar-container {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        /* Estilo para los bloques de contenido (móvil y tablet) */
+        .feature-section {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 3rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        /* Estilo para invertir el orden en secciones alternas en desktop */
+        @media (min-width: 1024px) {
+            .feature-section:nth-child(even) .content-container {
+                flex-direction: row-reverse;
+            }
+            .feature-section {
+                padding: 5rem 2rem;
+            }
+        }
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        @media (min-width: 1024px) {
+            .content-container {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+        /* Estilo para simular un marco de dispositivo */
+        .device-mockup {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            max-width: 100%;
+            height: auto;
+            border: 8px solid #374151; /* Borde oscuro para simular el marco */
+        }
+        .device-mockup img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        /* Estilo para el botón de acceso */
+        .btn-brand {
+            background-color: #5bc5a7;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+        .btn-brand:hover {
+            background-color: #48a98a;
+        }
+        /* ------------------------------------------------------------------- */
+/* SECCIÓN: Contacto, Redes y Asistencia (NUEVOS ESTILOS) */
+/* ------------------------------------------------------------------- */
+.contact-section {
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto 40px auto; 
+    padding: 40px 60px;
+    background-color: #5bc5a7; /* Usar el color alternativo para el footer */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.contact-grid h3 {
+    color: var(--color-accent-green);
+    border-bottom: 2px solid var(--color-border-subtle);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.contact-info p, .tech-support p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: var(--color-text-subtle);
+}
+
+.social-media {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    color: var(--color-text-light);
+    text-decoration: none;
+    padding: 8px 12px;
+    background-color: #4ab48d;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.social-icon:hover {
+    background-color: var(--color-accent-blue);
+}
+
+.btn-support {
+    width: auto;
+    padding: 10px 20px;
+    background-color: var(--color-accent-blue);
+    color: var(--color-text-light);
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.btn-support:hover {
+    background-color: #4ab48d;
+}
+
+.copyright {
+    font-size: 0.8rem !important;
+    margin-top: 20px !important;
+    color: #555 !important;
+}
