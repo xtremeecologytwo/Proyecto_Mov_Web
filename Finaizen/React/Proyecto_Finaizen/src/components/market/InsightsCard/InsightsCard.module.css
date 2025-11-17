@@ -1,0 +1,43 @@
+/* InsightsCard */
+
+.insightsCard {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 6px solid #4e79a7;
+}
+
+.insightsCard h4 {
+  margin: 0 0 1em 0;
+  font-size: 1.1em;
+  color: #333;
+  font-weight: 600;
+}
+
+.insightsCard p {
+  margin: 0;
+  line-height: 1.6;
+  color: #666;
+  font-size: 0.95em;
+}
+
+.insightsCard strong {
+  color: #0a2a43;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .insightsCard {
+    padding: 1.2em;
+  }
+
+  .insightsCard h4 {
+    font-size: 1em;
+  }
+
+  .insightsCard p {
+    font-size: 0.9em;
+  }
+}

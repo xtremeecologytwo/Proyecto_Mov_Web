@@ -1,0 +1,56 @@
+/* InteligenciaMercado */
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f7fa;
+  width: 100%;
+  position: relative;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 30px;
+  margin-left: 250px;
+  transition: margin-left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.mainContent.expanded {
+  margin-left: 80px;
+}
+
+.chartsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .chartsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .mainContent.expanded {
+    margin-left: 0;
+  }
+
+  .chartsGrid {
+    gap: 20px;
+  }
+}

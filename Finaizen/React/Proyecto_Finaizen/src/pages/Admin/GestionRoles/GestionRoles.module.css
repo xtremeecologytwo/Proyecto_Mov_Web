@@ -1,0 +1,98 @@
+/* GestionRoles */
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f7fa;
+  width: 100%;
+  position: relative;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 30px;
+  margin-left: 250px;
+  transition: margin-left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.mainContent.expanded {
+  margin-left: 80px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.cardHeader h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.btnAddRole {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #0a2a43 0%, #1c4c73 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(10, 42, 67, 0.2);
+}
+
+.btnAddRole:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(10, 42, 67, 0.3);
+}
+
+.btnAddRole:active {
+  transform: translateY(0);
+}
+
+.rolesList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mainContent {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .mainContent.expanded {
+    margin-left: 0;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .btnAddRole {
+    width: 100%;
+  }
+}

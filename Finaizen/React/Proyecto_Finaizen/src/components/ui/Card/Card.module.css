@@ -1,0 +1,106 @@
+/* Card Component Styles */
+.card {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.card.clickable {
+  cursor: pointer;
+}
+
+.card.clickable:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Card Variants */
+.card.primary {
+  background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+  color: white;
+}
+
+.card.success {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: white;
+}
+
+.card.warning {
+  background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+  color: white;
+}
+
+.card.danger {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+  color: white;
+}
+
+/* Card Header */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cardIcon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.cardHeaderText {
+  flex: 1;
+}
+
+.cardTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+  color: inherit;
+}
+
+.card.default .cardTitle {
+  color: #111827;
+}
+
+.cardSubtitle {
+  font-size: 0.875rem;
+  margin: 0.25rem 0 0 0;
+  opacity: 0.8;
+}
+
+.card.default .cardSubtitle {
+  color: #6b7280;
+}
+
+/* Card Body */
+.cardBody {
+  color: inherit;
+}
+
+.card.default .cardBody {
+  color: #374151;
+}
+
+/* Card Footer */
+.cardFooter {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.875rem;
+}
+
+.card.default .cardFooter {
+  border-top-color: #e5e7eb;
+  color: #6b7280;
+}
+
+.card.primary .cardFooter,
+.card.success .cardFooter,
+.card.warning .cardFooter,
+.card.danger .cardFooter {
+  border-top-color: rgba(255, 255, 255, 0.2);
+}

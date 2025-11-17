@@ -1,0 +1,106 @@
+/* TopCategoriesChart */
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.2em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.chartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.chartHeader h3 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #333;
+  font-weight: 600;
+}
+
+.toggleBtn {
+  padding: 8px 16px;
+  background-color: #0a2a43;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.toggleBtn:hover {
+  background-color: #1c4c73;
+  transform: translateY(-1px);
+}
+
+.toggleBtn:active {
+  transform: translateY(0);
+}
+
+.chartWrapper {
+  position: relative;
+  height: 350px;
+  min-height: 250px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  margin-top: 1em;
+}
+
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dataTable th,
+.dataTable td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.dataTable th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9em;
+}
+
+.dataTable tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.dataTable td {
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chartHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .toggleBtn {
+    width: 100%;
+  }
+
+  .chartWrapper {
+    height: 300px;
+  }
+}

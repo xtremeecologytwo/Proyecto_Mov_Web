@@ -1,0 +1,90 @@
+/* ========================================
+   TEXTAREA COMPONENT STYLES
+   ======================================== */
+
+.textareaGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.textareaLabel {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.required {
+  color: #e74c3c;
+  margin-left: 0.25rem;
+}
+
+.textareaField {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 100px;
+  transition: all 0.3s ease;
+}
+
+.textareaField:hover {
+  border-color: #4CAF50;
+}
+
+.textareaField:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.textareaField::placeholder {
+  color: #999;
+}
+
+.textareaField:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.textareaError {
+  border-color: #e74c3c !important;
+}
+
+.textareaError:focus {
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1) !important;
+}
+
+.textareaFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 1.25rem;
+}
+
+.errorMessage {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  flex: 1;
+}
+
+.characterCounter {
+  color: #666;
+  font-size: 0.85rem;
+  margin-left: auto;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 480px) {
+  .textareaField {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.95rem;
+  }
+}

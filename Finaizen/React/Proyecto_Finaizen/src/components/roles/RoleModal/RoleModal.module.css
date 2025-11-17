@@ -1,0 +1,142 @@
+/* RoleModal */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modalContent h3 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 1.4em;
+}
+
+.modalContent h4 {
+  margin: 20px 0 15px 0;
+  color: #333;
+  font-size: 1.1em;
+}
+
+.roleNameInput {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.roleNameInput:focus {
+  outline: none;
+  border-color: #0a2a43;
+  box-shadow: 0 0 0 3px rgba(10, 42, 67, 0.1);
+}
+
+.permissionsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.permissionItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.permissionItem input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.permissionItem label {
+  font-size: 0.9em;
+  color: #333;
+  cursor: pointer;
+  user-select: none;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.modalActions button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95em;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btnCancel {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btnCancel:hover {
+  background-color: #5a6268;
+}
+
+.btnSave {
+  background: linear-gradient(135deg, #0a2a43 0%, #1c4c73 100%);
+  color: white;
+}
+
+.btnSave:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(10, 42, 67, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modalContent {
+    width: 95%;
+    padding: 20px;
+    max-height: 90vh;
+  }
+
+  .permissionsGrid {
+    grid-template-columns: 1fr;
+    max-height: 200px;
+  }
+
+  .modalActions {
+    flex-direction: column;
+  }
+
+  .modalActions button {
+    width: 100%;
+  }
+}

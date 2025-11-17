@@ -1,0 +1,36 @@
+/* TrendsChart */
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.2em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  grid-column: 1 / -1; /* Ocupa todo el ancho */
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.card h3 {
+  margin: 0 0 1em 0;
+  font-size: 1.2em;
+  color: #333;
+  font-weight: 600;
+}
+
+.chartWrapper {
+  position: relative;
+  height: 300px;
+  min-height: 250px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chartWrapper {
+    height: 300px;
+  }
+}

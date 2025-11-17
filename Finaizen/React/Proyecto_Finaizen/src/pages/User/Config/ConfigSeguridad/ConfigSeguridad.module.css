@@ -1,0 +1,193 @@
+/* ========================================
+   CONFIG SEGURIDAD PAGE STYLES
+   ======================================== */
+
+.configSeguridadPage {
+  width: 100%;
+  max-width: 100%;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  color: #343a40;
+  font-size: 2em;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #6c757d;
+  font-size: 1em;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+/* ========================================
+   FORM STYLES
+   ======================================== */
+
+.sectionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+}
+
+.sectionTitle {
+  font-size: 1.3em;
+  color: #343a40;
+  margin: 0 0 20px 0;
+  font-weight: 600;
+}
+
+.passwordCard,
+.twoFactorCard {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 35px 45px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.passwordCard:hover,
+.twoFactorCard:hover {
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.passwordForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.passwordRequirements {
+  background-color: #e8f5f5;
+  border-left: 4px solid #4DB6AC;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.passwordRequirements p {
+  margin: 0 0 10px 0;
+  color: #00796B;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.passwordRequirements ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #495057;
+  font-size: 0.85em;
+  line-height: 1.8;
+}
+
+.passwordRequirements li {
+  margin-bottom: 5px;
+}
+
+.errorMessage {
+  padding: 12px 15px;
+  background-color: #ffebee;
+  color: #E57373;
+  border-radius: 8px;
+  font-size: 0.85em;
+  border-left: 4px solid #E57373;
+  font-weight: 500;
+}
+
+.twoFactorContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.twoFactorInfo h3 {
+  margin: 0 0 10px 0;
+  color: #343a40;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.twoFactorInfo p {
+  margin: 0;
+  color: #6c757d;
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+.twoFactorActiveInfo {
+  padding: 15px 20px;
+  background-color: #d4edda;
+  color: #155724;
+  border-radius: 8px;
+  border-left: 4px solid #28a745;
+  font-size: 0.9em;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.6em;
+  }
+
+  .subtitle {
+    font-size: 0.95em;
+  }
+
+  .passwordCard,
+  .twoFactorCard {
+    padding: 25px 30px;
+  }
+
+  .sectionTitle {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.4em;
+  }
+
+  .passwordCard,
+  .twoFactorCard {
+    padding: 20px 25px;
+  }
+
+  .formActions {
+    flex-direction: column;
+  }
+
+  .formActions button {
+    width: 100%;
+  }
+}

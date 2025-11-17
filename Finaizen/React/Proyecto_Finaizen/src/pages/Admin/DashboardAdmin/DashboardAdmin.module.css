@@ -1,0 +1,37 @@
+/* DashboardAdmin - Página principal del administrador */
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f7fa;
+  width: 100%;
+  position: relative;
+}
+
+.dashboardAdmin {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-left: 250px; /* Ancho del sidebar expandido */
+  transition: margin-left 0.3s ease;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.dashboardAdmin.expanded {
+  margin-left: 80px; /* Ancho del sidebar colapsado */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboardAdmin {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .dashboardAdmin.expanded {
+    margin-left: 0;
+  }
+}

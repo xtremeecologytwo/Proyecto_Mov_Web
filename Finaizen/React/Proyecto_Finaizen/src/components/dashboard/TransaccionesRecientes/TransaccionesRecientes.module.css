@@ -1,0 +1,84 @@
+/* Historial */
+.historialList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  flex: 1;
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.historialItem {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.historialItem:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.historialIcon {
+  font-size: 1.75rem;
+  line-height: 1;
+  min-width: 1.75rem;
+}
+
+.historialInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  min-width: 0;
+}
+
+.historialDescripcion {
+  font-weight: 600;
+  color: #111827;
+  font-size: 0.9375rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.historialFecha {
+  font-size: 0.8125rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.historialMonto {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  white-space: nowrap;
+}
+
+.historialMonto.ingreso {
+  color: #10b981;
+}
+
+.historialMonto.egreso {
+  color: #ef4444;
+}
+
+/* Empty States */
+.emptyMessage {
+  text-align: center;
+  color: #9ca3af;
+  padding: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.viewAllButton {
+  margin-top: 0.5rem;
+  width: 100%;
+  justify-content: center;
+}

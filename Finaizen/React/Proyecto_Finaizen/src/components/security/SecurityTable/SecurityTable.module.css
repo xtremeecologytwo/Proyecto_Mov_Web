@@ -1,0 +1,69 @@
+.securityLogTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.securityLogTable th,
+.securityLogTable td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.securityLogTable th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #1a2a44;
+}
+
+.securityLogTable tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.eventType {
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-weight: 500;
+  font-size: 0.9em;
+  text-align: center;
+  display: inline-block;
+}
+
+.eventType.fallido {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.eventType.exitoso {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.eventType.modificacion {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.actionLink {
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.actionLink.block {
+  color: #dc3545;
+}
+
+.actionLink.unblock {
+  color: #28a745;
+}
+
+.actionLink:hover {
+  opacity: 0.8;
+}
+
+.noData {
+  text-align: center;
+  padding: 2rem;
+  color: #888;
+}

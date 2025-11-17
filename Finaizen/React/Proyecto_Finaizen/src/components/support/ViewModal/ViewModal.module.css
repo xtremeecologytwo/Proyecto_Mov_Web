@@ -1,0 +1,90 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 500px;
+  max-width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modalContent h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #1a2a44;
+}
+
+.reportDetails {
+  margin-bottom: 1.5rem;
+}
+
+.reportDetails p {
+  margin: 0.75rem 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.reportDetails strong {
+  color: #333;
+  margin-right: 0.5rem;
+}
+
+.status {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
+.status.nuevo {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.status.pendiente {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status.resuelto {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status.escalado {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.modalActions {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.btnClose {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: #6c757d;
+  color: white;
+  transition: opacity 0.2s;
+}
+
+.btnClose:hover {
+  opacity: 0.9;
+}

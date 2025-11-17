@@ -1,0 +1,278 @@
+/* ============================================ */
+/* PIE CHART - Gráfico de Pastel */
+/* ============================================ */
+
+.pieContainer {
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+  text-align: center;
+}
+
+/* Gráfico */
+.chartWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  aspect-ratio: 1;
+}
+
+.pieSvg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+}
+
+.segment {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  stroke: white;
+  stroke-width: 0.5;
+}
+
+.segment:hover,
+.segment.active {
+  filter: brightness(1.15);
+  transform: scale(1.02);
+  transform-origin: center;
+}
+
+/* Texto central */
+.centerLabel {
+  font-size: 0.875rem;
+  fill: #1e293b;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.centerSubLabel {
+  font-size: 0.75rem;
+  fill: #64748b;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+/* Tooltip flotante */
+.floatingTooltip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(8px);
+  color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  pointer-events: none;
+  z-index: 10;
+  min-width: 180px;
+  animation: tooltipFadeIn 0.2s ease-out;
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.tooltipTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: white;
+  text-transform: capitalize;
+}
+
+.tooltipRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0.35rem 0;
+  font-size: 0.875rem;
+  color: #cbd5e1;
+}
+
+.tooltipRow.tooltipTotal {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.tooltipRow .positive {
+  color: #5eead4;
+}
+
+.tooltipRow .negative {
+  color: #fbbf24;
+}
+
+.tooltipPercent {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* Leyenda */
+.legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.legendItem:hover,
+.legendItem.highlighted {
+  background: #f8fafc;
+}
+
+.legendColor {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.legendInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legendLabel {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.legendValue {
+  font-size: 0.875rem;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* Estado vacío */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #f8fafc;
+  border-radius: 12px;
+  min-height: 350px;
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.emptyState p {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: #475569;
+}
+
+.emptyState span {
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+/* Scrollbar personalizado para leyenda - REMOVED */
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pieContainer {
+    padding: 1rem;
+  }
+
+  .chartWrapper {
+    max-width: 260px;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .legend {
+    gap: 1rem;
+  }
+
+  .legendLabel,
+  .legendValue {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .chartWrapper {
+    max-width: 220px;
+  }
+
+  .legend {
+    gap: 0.75rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .legendItem {
+    padding: 0.5rem;
+    justify-content: center;
+  }
+
+  .legendLabel,
+  .legendValue {
+    font-size: 0.75rem;
+  }
+
+  .floatingTooltip {
+    min-width: 150px;
+    padding: 0.75rem;
+  }
+
+  .tooltipTitle {
+    font-size: 0.875rem;
+  }
+
+  .tooltipRow {
+    font-size: 0.75rem;
+  }
+}

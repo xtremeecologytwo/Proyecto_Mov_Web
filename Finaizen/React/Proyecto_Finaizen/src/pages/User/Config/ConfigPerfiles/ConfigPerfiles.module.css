@@ -1,0 +1,141 @@
+/* ========================================
+   CONFIG PERFILES PAGE STYLES
+   ======================================== */
+
+.configPerfilesPage {
+  width: 100%;
+  max-width: 100%;
+  animation: fadeIn 0.3s ease;
+}
+
+.profilesManagementCard {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  width: 100%;
+}
+
+.profilesManagementCard h1 {
+  font-size: 1.75em;
+  color: #343a40;
+  margin: 0 0 5px 0;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 0.9em;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+/* ========================================
+   PROFILES CONTAINER (Flex Wrap)
+   ======================================== */
+
+.profilesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px 5px 15px 5px;
+}
+
+/* ========================================
+   PROFILE CARD
+   ======================================== */
+
+/* Tarjeta "Agregar Perfil" */
+.profileCardAdd {
+  flex: 0 0 220px;
+  background-color: #f8f9fa;
+  border: 2px dashed #ced4da;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #6c757d;
+  font-weight: 600;
+  gap: 10px;
+  box-shadow: none;
+  transition: all 0.3s ease;
+  min-height: 260px;
+}
+
+.profileCardAdd:hover {
+  border-color: #007A7A;
+  color: #007A7A;
+  background-color: #e9f5f5;
+  transform: none;
+}
+
+.addIcon {
+  font-size: 2.2em;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .profilesManagementCard {
+    padding: 1.5rem;
+  }
+
+  .profilesContainer {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 15px;
+  }
+
+  .profileCardAdd {
+    width: 100%;
+    min-height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .configPerfilesPage {
+    padding: 0;
+  }
+
+  .profilesManagementCard {
+    padding: 1.25rem;
+  }
+
+  .profilesManagementCard h1 {
+    font-size: 1.5em;
+  }
+
+  .subtitle {
+    font-size: 0.85em;
+    margin-bottom: 1.25rem;
+  }
+
+  .profilesContainer {
+    gap: 12px;
+  }
+
+  .profileCardAdd {
+    min-height: 160px;
+  }
+
+  .addIcon {
+    font-size: 2em;
+  }
+}

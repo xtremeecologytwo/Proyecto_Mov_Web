@@ -1,0 +1,96 @@
+/* ============================================ */
+/* BALANCE TOOLTIP MODAL */
+/* ============================================ */
+
+.tooltipModal {
+  position: fixed;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(8px);
+  color: white;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  z-index: 10000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  transform: translate(-50%, -100%);
+  margin-top: -10px;
+  animation: tooltipFadeIn 0.2s ease-out;
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -95%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -100%);
+  }
+}
+
+.tooltipHeader {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  text-transform: capitalize;
+  color: white;
+}
+
+.tooltipRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0.25rem 0;
+  font-size: 0.813rem;
+}
+
+.tooltipRow.tooltipTotal {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+}
+
+.tooltipLabel {
+  color: #cbd5e1;
+}
+
+.tooltipValue {
+  color: white;
+  font-weight: 600;
+}
+
+.tooltipValue.positive {
+  color: #5eead4;
+}
+
+.tooltipValue.negative {
+  color: #fbbf24;
+}
+
+.tooltipArrow {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(15, 23, 42, 0.95);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tooltipModal {
+    font-size: 0.75rem;
+    padding: 0.6rem;
+  }
+
+  .tooltipRow {
+    font-size: 0.75rem;
+  }
+}

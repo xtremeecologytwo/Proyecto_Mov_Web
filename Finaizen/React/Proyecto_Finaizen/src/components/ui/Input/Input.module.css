@@ -1,0 +1,59 @@
+/* Estilos para Input */
+.inputGroup {
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.inputLabel {
+  display: block;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 8px;
+  font-size: 0.9em;
+}
+
+.inputLabel .required {
+  color: #E57373;
+  margin-left: 0.25rem;
+}
+
+.inputField {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 1em;
+  background-color: #f8f9fa;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: #4DB6AC;
+  box-shadow: 0 0 0 3px rgba(77, 182, 172, 0.2);
+}
+
+.inputField::placeholder {
+  color: #9ca3af;
+}
+
+.inputField:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.inputError {
+  border-color: #E57373 !important;
+}
+
+.inputError:focus {
+  box-shadow: 0 0 0 3px rgba(229, 115, 115, 0.2);
+}
+
+.errorMessage {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.85em;
+  color: #E57373;
+}

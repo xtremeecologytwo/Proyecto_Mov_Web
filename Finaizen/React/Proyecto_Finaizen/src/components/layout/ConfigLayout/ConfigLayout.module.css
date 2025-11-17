@@ -1,0 +1,54 @@
+/* ========================================
+   CONFIG LAYOUT STYLES
+   ======================================== */
+
+.configLayout {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.mainContent {
+  flex: 1;
+  padding: 2rem;
+  transition: margin-left 0.3s ease;
+}
+
+/* Solo en desktop aplicar el margin-left */
+@media (min-width: 1025px) {
+  .mainContent {
+    margin-left: 250px;
+  }
+
+  .mainContent.collapsed {
+    margin-left: 80px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - Tablets y Móviles
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .mainContent {
+    margin-left: 0 !important;
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
+
+  .mainContent.collapsed {
+    margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    padding: 1.25rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainContent {
+    padding: 1rem;
+  }
+}

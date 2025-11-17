@@ -1,0 +1,122 @@
+/* ========================================
+   CONFIG CUENTA PAGE STYLES
+   ======================================== */
+
+.configCuentaPage {
+  width: 100%;
+  max-width: 100%;
+  animation: fadeIn 0.3s ease;
+}
+
+.title {
+  font-size: 2em;
+  color: #343a40;
+  margin: 0 0 5px 0;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1em;
+  color: #6c757d;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 20px;
+}
+
+/* ========================================
+   FORM STYLES
+   ======================================== */
+
+.accountForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formRow {
+  display: flex;
+  gap: 50px;
+}
+
+.formRow > * {
+  flex: 1;
+}
+
+.warningText {
+  color: #E57373;
+  font-size: 0.85em;
+  margin-top: 12px;
+  font-style: italic;
+  padding: 12px 15px;
+  background-color: #ffebee;
+  border-left: 4px solid #E57373;
+}
+/* ========================================
+   FORM ACTIONS
+   ======================================== */
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+}
+.formActions button {
+  min-width: 200px;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .configCuentaPage {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 1.6em;
+  }
+
+  .subtitle {
+    font-size: 0.95em;
+  }
+
+  .formRow {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .formActions {
+    flex-direction: column;
+  }
+
+  .formActions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .configCuentaPage {
+    padding: 15px;
+  }
+
+  .accountForm {
+    gap: 15px;
+  }
+}

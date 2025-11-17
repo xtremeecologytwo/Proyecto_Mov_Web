@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.mainContent {
+  flex: 1;
+  margin-left: 250px;
+  padding: 2rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #f5f6fa;
+  transition: margin-left 0.3s ease;
+}
+
+.mainContent.expanded {
+  margin-left: 80px;
+}
+
+.mainContent h1 {
+  margin: 0 0 2rem 0;
+  color: #0a2a43;
+  font-size: 1.75rem;
+}
+
+.tableSection {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    margin-left: 80px;
+    padding: 1rem;
+  }
+}

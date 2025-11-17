@@ -1,0 +1,199 @@
+/* Contenedor principal */
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f5f7fa;
+  position: relative;
+}
+
+/* Contenido principal */
+.mainContent {
+  flex: 1;
+  padding: 2rem;
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* Solo en desktop aplicar margin */
+@media (min-width: 1025px) {
+  .mainContent {
+    margin-left: 250px;
+  }
+
+  .mainContent.sidebarCollapsed {
+    margin-left: 80px;
+  }
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, #4DB6AC 0%, #26A69A 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  box-shadow: 0 4px 20px rgba(77, 182, 172, 0.3);
+}
+
+.headerContent h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0;
+  opacity: 0.95;
+  font-size: 1rem;
+}
+
+.addButton {
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Lista de presupuestos */
+.budgetList {
+  min-height: 400px;
+}
+
+.budgetGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Filtros */
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filterButton {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #e0e0e0;
+  background: white;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #666;
+}
+
+.filterButton:hover {
+  border-color: #4DB6AC;
+  color: #4DB6AC;
+  background-color: rgba(77, 182, 172, 0.05);
+}
+
+.filterButton.active {
+  background: linear-gradient(135deg, #4DB6AC 0%, #26A69A 100%);
+  color: white;
+  border-color: #4DB6AC;
+  box-shadow: 0 2px 8px rgba(77, 182, 172, 0.3);
+}
+
+/* Estado vacío */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.emptyIcon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.emptyState h3 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.emptyState p {
+  margin: 0 0 1.5rem 0;
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .mainContent {
+    padding: 1.5rem;
+    padding-top: 5rem; /* Espacio para el botón flotante */
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    padding: 1rem;
+    padding-top: 4.5rem; /* Espacio para el botón flotante */
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: stretch;
+    padding: 1.5rem;
+  }
+
+  .headerContent h1 {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .addButton {
+    width: 100%;
+  }
+
+  .filters {
+    gap: 0.5rem;
+  }
+
+  .filterButton {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    flex: 1;
+    min-width: fit-content;
+  }
+
+  .budgetGrid {
+    gap: 1rem;
+  }
+
+  .emptyState {
+    padding: 3rem 1.5rem;
+  }
+
+  .emptyIcon {
+    font-size: 3rem;
+  }
+
+  .emptyState h3 {
+    font-size: 1.25rem;
+  }
+
+  .emptyState p {
+    font-size: 0.9rem;
+  }
+}

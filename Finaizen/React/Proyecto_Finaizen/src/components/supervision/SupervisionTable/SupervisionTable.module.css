@@ -1,0 +1,117 @@
+.tableContainer {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.supervisionTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.supervisionTable th,
+.supervisionTable td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.supervisionTable th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #1a2a44;
+}
+
+.supervisionTable tr:hover {
+  background-color: #f8f9fa;
+}
+
+.confidenceLevel {
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: inline-block;
+}
+
+.confidenceLevel.alta {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.confidenceLevel.media {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.confidenceLevel.baja {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.rowActions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btnValidate {
+  background-color: #28a745;
+  color: white;
+}
+
+.btnValidate:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+.btnCorrect {
+  background-color: #007bff;
+  color: white;
+}
+
+.btnCorrect:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.statusBadge {
+  padding: 6px 12px;
+  border-radius: 16px;
+  background-color: #d4edda;
+  color: #155724;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .supervisionTable {
+    font-size: 0.875rem;
+  }
+
+  .supervisionTable th,
+  .supervisionTable td {
+    padding: 10px;
+  }
+
+  .rowActions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

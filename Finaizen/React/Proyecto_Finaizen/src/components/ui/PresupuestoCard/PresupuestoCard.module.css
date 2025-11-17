@@ -1,0 +1,285 @@
+/* Tarjeta de Presupuesto Individual */
+.budgetCard {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  border-left: 5px solid;
+  border-top: 1px solid #e9ecef;
+  border-right: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto auto;
+  gap: 0.75rem 1.5rem;
+  align-items: center;
+}
+
+.budgetCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+
+.budgetCard.compact {
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Layout Grid - Vista Completa */
+/* Fila 1: Categoría | Monto | Acciones */
+.category {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #343a40;
+}
+
+.amount {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #6c757d;
+  justify-self: start;
+}
+
+.budgetActions {
+  grid-column: 3;
+  grid-row: 1;
+  display: flex;
+  gap: 1rem;
+  justify-self: end;
+}
+
+/* Fila 2: Barra de progreso (ocupa todas las columnas) */
+.progressBar {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  background-color: #dee2e6;
+  height: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Fila 3: Mensaje de estado (ocupa todas las columnas) */
+.alertText,
+.percentage {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.percentage {
+  color: #6c757d;
+  font-weight: 600;
+}
+
+/* Modo Compacto - Mantiene layout original */
+.budgetCard.compact .category {
+  font-size: 1.1rem;
+  grid-column: auto;
+  grid-row: auto;
+}
+
+.budgetCard.compact .amount {
+  font-size: 0.95rem;
+  grid-column: auto;
+  grid-row: auto;
+}
+
+.budgetCard.compact .progressBar {
+  grid-column: auto;
+  grid-row: auto;
+}
+
+.budgetCard.compact .alertText,
+.budgetCard.compact .percentage {
+  grid-column: auto;
+  grid-row: auto;
+  font-size: 0.85rem;
+}
+
+/* Header para modo compacto */
+.budgetHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Acciones */
+.editButton,
+.deleteButton {
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.editButton:hover,
+.deleteButton:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.editButton {
+  color: #4DB6AC;
+  background-color: rgba(77, 182, 172, 0.1);
+}
+
+.editButton:hover {
+  background-color: rgba(77, 182, 172, 0.2);
+}
+
+.deleteButton {
+  color: #E57373;
+  background-color: rgba(229, 115, 115, 0.1);
+}
+
+.deleteButton:hover {
+  background-color: rgba(229, 115, 115, 0.2);
+}
+
+/* Barra de Progreso */
+.progress {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.5s ease-in-out;
+}
+
+/* Colores de Estado */
+.statusOk {
+  border-left-color: #81C784;
+}
+
+.statusOk .progress {
+  background-color: #81C784;
+}
+
+.statusNeutral {
+  border-left-color: #4DB6AC;
+}
+
+.statusNeutral .progress {
+  background-color: #4DB6AC;
+}
+
+.statusWarning {
+  border-left-color: #FFB74D;
+}
+
+.statusWarning .progress {
+  background-color: #FFB74D;
+}
+
+.statusWarning .alertText {
+  color: #FB8C00;
+  font-weight: 600;
+}
+
+.statusDanger {
+  border-left-color: #E57373;
+}
+
+.statusDanger .progress {
+  background-color: #E57373;
+}
+
+.statusDanger .alertText {
+  color: #E57373;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  /* En mobile, volver al diseño vertical original */
+  .budgetCard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.25rem;
+  }
+
+  /* Orden de elementos en mobile */
+  .category {
+    order: 1;
+    font-size: 1.2rem;
+  }
+
+  .amount {
+    order: 2;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .progressBar {
+    order: 3;
+    width: 100%;
+    height: 14px;
+  }
+
+  .alertText {
+    order: 4;
+    font-size: 0.85rem;
+    text-align: left;
+  }
+
+  .budgetActions {
+    order: 5;
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .editButton,
+  .deleteButton {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+    flex: 1;
+    max-width: 150px;
+  }
+
+  /* Para modo compacto en mobile */
+  .budgetCard.compact .budgetHeader {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .budgetCard.compact .details {
+    width: 100%;
+  }
+
+  .budgetCard.compact .category {
+    order: initial;
+  }
+
+  .budgetCard.compact .amount {
+    order: initial;
+  }
+
+  .budgetCard.compact .progressBar {
+    order: initial;
+  }
+
+  .percentage {
+    order: initial;
+  }
+}

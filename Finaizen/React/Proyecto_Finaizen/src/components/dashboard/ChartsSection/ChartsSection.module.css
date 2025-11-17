@@ -1,0 +1,114 @@
+/* Charts Section - Responsive Layout */
+.chartsSection {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+/* Mobile Chart Toggle - Solo visible en móvil */
+.mobileChartToggle {
+  display: none;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  background: #f3f4f6;
+  padding: 0.25rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+.mobileChartToggle .toggleButton {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.mobileChartToggle .toggleButton:hover {
+  color: #111827;
+}
+
+.mobileChartToggle .toggleButton.active {
+  background: white;
+  color: #0f766e;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Desktop: Grid de 2 columnas */
+.chartsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  align-items: stretch;
+}
+
+.chartCard {
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chartCard > * {
+  height: 100%;
+}
+
+/* Responsive: En móvil mostrar solo una gráfica según toggle */
+.mobileVisible {
+  display: block;
+}
+
+.mobileHidden {
+  display: block;
+}
+
+/* Chart Toggle Buttons */
+.toggleButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  transition: all 0.2s;
+}
+
+.toggleButton:hover {
+  color: #111827;
+}
+
+.toggleButton.active {
+  background: white;
+  color: #0f766e;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  /* Charts responsive */
+  .mobileChartToggle {
+    display: flex;
+  }
+
+  .chartsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .chartCard.mobileHidden {
+    display: none;
+  }
+
+  .chartCard.mobileVisible {
+    display: block;
+  }
+}

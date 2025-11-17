@@ -1,0 +1,20 @@
+/* Presupuestos */
+.presupuestosList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Empty States */
+.emptyMessage {
+  text-align: center;
+  color: #9ca3af;
+  padding: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.viewAllButton {
+  margin-top: 0.5rem;
+  width: 100%;
+  justify-content: center;
+}

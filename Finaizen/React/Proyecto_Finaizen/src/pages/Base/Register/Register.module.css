@@ -1,0 +1,179 @@
+/* Register Page Styles */
+.registerPage { 
+  min-height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+  background-color: #f9fafb; 
+  padding-top: 72px; 
+}
+
+.registerContainer { 
+  flex: 1; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 3rem 1rem; 
+}
+
+.registerCard { 
+  width: 100%; 
+  max-width: 42rem; 
+  background: white; 
+  padding: 2rem; 
+  border-radius: 0.75rem; 
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); 
+  border: 1px solid #e5e7eb; 
+}
+
+.registerHeader { 
+  text-align: center; 
+  margin-bottom: 2rem; 
+}
+
+.registerHeader h1 { 
+  font-size: 1.875rem; 
+  font-weight: 700; 
+  color: #111827; 
+  margin-bottom: 0.5rem; 
+}
+
+.registerHeader p { 
+  color: #6b7280; 
+}
+
+.registerForm { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 1.5rem; 
+}
+
+.grid2 { 
+  display: grid; 
+  grid-template-columns: 1fr; 
+  gap: 1rem; 
+}
+
+@media (min-width: 768px) { 
+  .grid2 { 
+    grid-template-columns: 1fr 1fr; 
+  } 
+}
+
+.selectLabel { 
+  display: block; 
+  font-size: 0.875rem; 
+  font-weight: 500; 
+  color: #374151; 
+  margin-bottom: 0.5rem; 
+}
+
+.selectField { 
+  width: 100%; 
+  padding: 0.75rem; 
+  border: 1px solid #d1d5db; 
+  border-radius: 0.5rem; 
+  font-size: 1rem; 
+  background: white; 
+}
+
+.selectField:focus { 
+  outline: none; 
+  border-color: #5bc5a7; 
+  box-shadow: 0 0 0 3px rgba(91,197,167,0.1); 
+}
+
+.phoneGrid { 
+  display: grid; 
+  grid-template-columns: 1fr 2fr; 
+  gap: 0.5rem; 
+}
+
+.checkboxLabel { 
+  display: flex; 
+  align-items: start; 
+  gap: 0.5rem; 
+  font-size: 0.875rem; 
+  color: #374151; 
+  cursor: pointer; 
+}
+
+.checkboxLabel input[type="checkbox"] { 
+  margin-top: 0.25rem; 
+  width: 1rem; 
+  height: 1rem; 
+  cursor: pointer; 
+  accent-color: #5bc5a7; 
+}
+
+.wFull { 
+  width: 100%; 
+}
+
+.divider { 
+  position: relative; 
+  text-align: center; 
+  margin: 1rem 0; 
+}
+
+.divider::before { 
+  content: ''; 
+  position: absolute; 
+  top: 50%; 
+  left: 0; 
+  right: 0; 
+  height: 1px; 
+  background: #d1d5db; 
+}
+
+.divider span { 
+  position: relative; 
+  background: white; 
+  padding: 0 0.5rem; 
+  font-size: 0.875rem; 
+  color: #6b7280; 
+}
+
+.socialButtons { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 1rem; 
+}
+
+.registerFooter { 
+  margin-top: 1.5rem; 
+  text-align: center; 
+  font-size: 0.875rem; 
+  color: #6b7280; 
+}
+
+.loginLink { 
+  color: #5bc5a7; 
+  font-weight: 600; 
+  text-decoration: none; 
+}
+
+.loginLink:hover { 
+  text-decoration: underline; 
+}
+
+/* Mensaje de notificación */
+.messageBanner {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.messageBanner.success {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #6ee7b7;
+}
+
+.messageBanner.error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}

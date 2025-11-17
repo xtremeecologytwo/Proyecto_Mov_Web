@@ -1,0 +1,71 @@
+/* AdminSummaryCards - Tarjetas de resumen para Admin */
+
+.summaryCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  width: 100%;
+}
+
+.summaryCard {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e9ecef;
+  border-left: 5px solid;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.summaryCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.cardIcon {
+  font-size: 2.5em;
+  opacity: 0.7;
+  min-width: 60px;
+  text-align: center;
+}
+
+.cardContent {
+  flex: 1;
+}
+
+.cardContent h3 {
+  margin: 0;
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #5a5c69;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cardContent p {
+  margin: 5px 0 0 0;
+  font-size: 2em;
+  font-weight: bold;
+  color: #3a3b45;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .summaryCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .summaryCards {
+    grid-template-columns: 1fr;
+  }
+  
+  .cardContent p {
+    font-size: 1.8em;
+  }
+}

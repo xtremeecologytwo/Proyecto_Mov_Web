@@ -1,0 +1,83 @@
+/* Estilos base para botones */
+.btn {
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Variante Primary - Botón principal (azul oscuro) */
+.btnPrimary {
+  background-color: #1a2a3a;
+  color: #ffffff;
+}
+
+.btnPrimary:hover:not(:disabled) {
+  background-color: #2c445c;
+  transform: translateY(-2px);
+}
+
+.btnPrimary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Variante Outline - Botón secundario */
+.btnOutline {
+  background: #f8f9fa;
+  color: #495057;
+  border: 2px solid #dee2e6;
+  font-weight: 600;
+}
+
+.btnOutline:hover:not(:disabled) {
+  background: #e9ecef;
+  color: #212529;
+  border-color: #adb5bd;
+  transform: translateY(-2px);
+}
+
+.btnOutline:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Variante Danger - Botón eliminar */
+.btnDanger {
+  background-color: #E57373;
+  color: white;
+}
+
+.btnDanger:hover:not(:disabled) {
+  background-color: #c62828;
+  transform: translateY(-2px);
+}
+
+.btnDanger:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Variante Brand - Botón teal */
+.btnBrand {
+  background-color: #007A7A;
+  color: white;
+}
+
+.btnBrand:hover:not(:disabled) {
+  background-color: #005f5f;
+  transform: translateY(-2px);
+}
+
+.btnBrand:active:not(:disabled) {
+  transform: translateY(0);
+}

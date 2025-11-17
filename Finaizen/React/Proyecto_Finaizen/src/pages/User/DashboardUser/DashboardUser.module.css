@@ -1,0 +1,155 @@
+/* Dashboard User Page Styles */
+.dashboardPage {
+  min-height: 100vh;
+  display: flex;
+  background-color: #f9fafb;
+  width: 100%;
+}
+
+.dashboardContainer {
+  flex: 1;
+  margin-left: 0;
+  padding: 2rem;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  transition: margin-left 0.3s ease, width 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* Loading */
+.loadingContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+}
+
+/* Solo en desktop aplicar margin */
+@media (min-width: 1025px) {
+  .dashboardContainer {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+  }
+
+  .dashboardContainer.collapsed {
+    margin-left: 80px;
+    width: calc(100% - 80px);
+  }
+
+  .loadingContainer {
+    margin-left: 250px;
+  }
+
+  .loadingContainer.collapsed {
+    margin-left: 80px;
+  }
+}
+
+/* Header */
+.dashboardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.welcomeSection h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+}
+
+.welcomeSection p {
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Main Grid */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  align-items: start;
+}
+
+.leftColumn,
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.leftColumn > *,
+.rightColumn > * {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .dashboardContainer {
+    padding: 2rem;
+    padding-top: 5rem; /* Espacio para el botón flotante (48px + 2rem) */
+  }
+
+  .dashboardHeader {
+    padding-left: 0;
+  }
+
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboardContainer {
+    padding: 1rem;
+    padding-top: 4.5rem; /* Espacio para el botón flotante */
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .dashboardContainer.collapsed {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .loadingContainer {
+    margin-left: 0;
+    padding-top: 4.5rem;
+  }
+
+  .loadingContainer.collapsed {
+    margin-left: 0;
+  }
+
+  .dashboardHeader h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboardContainer {
+    margin-left: 0;
+    padding: 0.5rem;
+    padding-top: 4rem;
+    width: 100%;
+  }
+
+  .loadingContainer {
+    margin-left: 0;
+  }
+}
+
+/* Chart Toggle Buttons - Removido, ahora está en ChartsSection component */

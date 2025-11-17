@@ -1,0 +1,52 @@
+/* UsersFilters */
+
+.filtersBar {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex: 1;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.searchInput,
+.filterSelect {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95em;
+  transition: all 0.2s ease;
+}
+
+.searchInput {
+  min-width: 250px;
+  flex: 1;
+}
+
+.searchInput:focus,
+.filterSelect:focus {
+  outline: none;
+  border-color: #0a2a43;
+  box-shadow: 0 0 0 3px rgba(10, 42, 67, 0.1);
+}
+
+.filterSelect {
+  cursor: pointer;
+  background-color: #f8f9fa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filtersBar {
+    flex-direction: column;
+  }
+
+  .searchInput {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .filterSelect {
+    width: 100%;
+  }
+}

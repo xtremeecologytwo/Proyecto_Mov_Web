@@ -1,0 +1,233 @@
+/* Profile Card Component Styles */
+
+.profileCard {
+  flex: 0 0 220px;
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  min-height: 260px;
+}
+
+.profileCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.profileCard.active {
+  border: 2px solid #007A7A;
+}
+
+.profileCardHeader {
+  background-color: #007A7A;
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 80px;
+}
+
+.profileIcon {
+  color: #ffffff;
+  font-size: 2.2em;
+}
+
+.activeBadge {
+  background: #28a745;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  font-weight: 600;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.profileCardBody {
+  padding: 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.profileName,
+.profileCurrency {
+  margin: 0;
+  font-size: 1.05em;
+  color: #343a40;
+  display: flex;
+  flex-direction: column;
+}
+
+.profileName span,
+.profileCurrency span {
+  font-size: 0.75em;
+  color: #6c757d;
+  margin-bottom: 4px;
+}
+
+.profileCurrency {
+  font-size: 0.95em;
+  margin-top: 8px;
+}
+
+.profileCurrency strong {
+  color: #007A7A;
+  font-weight: 600;
+}
+
+.profileCardActions {
+  margin-top: auto;
+  font-size: 0.9em;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.actionLink {
+  color: #007A7A;
+  text-decoration: none;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.actionLink:hover {
+  text-decoration: underline;
+}
+
+.actionLink.deleteLink {
+  color: #E57373;
+}
+
+.actionLink.deleteLink:hover {
+  color: #c62828;
+}
+
+/* Tablets mantienen diseño vertical */
+@media (max-width: 1024px) {
+  .profileCard {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Móviles usan diseño horizontal (contenido a la derecha) */
+@media (max-width: 768px) {
+  .profileCard {
+    max-width: 100%;
+    min-height: 140px;
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .profileCardHeader {
+    padding: 16px;
+    min-height: auto;
+    width: 120px;
+    flex-shrink: 0;
+  }
+
+  .profileIcon {
+    font-size: 2.5em;
+  }
+
+  .profileCardBody {
+    padding: 16px;
+    gap: 10px;
+    text-align: left;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .profileInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+
+  .profileName,
+  .profileCurrency {
+    font-size: 0.95em;
+  }
+
+  .profileCardActions {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+    margin-top: 0;
+    font-size: 0.85em;
+  }
+
+  .activeBadge {
+    font-size: 0.7em;
+    padding: 3px 8px;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* Móviles pequeños - diseño más compacto */
+@media (max-width: 480px) {
+  .profileCard {
+    min-height: 130px;
+  }
+
+  .profileCardHeader {
+    width: 100px;
+    padding: 12px;
+  }
+
+  .profileIcon {
+    font-size: 2.2em;
+  }
+
+  .profileCardBody {
+    padding: 14px;
+    gap: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profileInfo {
+    width: 100%;
+  }
+
+  .profileName,
+  .profileCurrency {
+    font-size: 0.9em;
+  }
+
+  .profileName span,
+  .profileCurrency span {
+    font-size: 0.7em;
+  }
+
+  .profileCardActions {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 0.8em;
+    gap: 10px;
+  }
+
+  .activeBadge {
+    font-size: 0.65em;
+    padding: 2px 6px;
+  }
+}
