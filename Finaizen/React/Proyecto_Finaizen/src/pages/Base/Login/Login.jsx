@@ -201,7 +201,7 @@ function Login() {
         </div>
       </section>
 
-      <Footer simple />
+      <Footer complejo />
     </div>
   );
 }
